@@ -1,10 +1,11 @@
 import React from 'react';
+import MasterLayout from '../components/layout/MasterLayout';
 
 const HomePage = () => {
     return (
-        <div>
-            <h1>Home page</h1>
-        </div>
+        <MasterLayout>
+            <h1 className=''>Home page</h1>
+        </MasterLayout>
     );
 };
 
