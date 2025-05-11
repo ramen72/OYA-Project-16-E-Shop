@@ -10,22 +10,25 @@ import MyAccountsPage from './pages/MyAccountsPage';
 import BlogsPage from './pages/BlogsPage';
 import BlogDetailsPage from './pages/BlogDetailsPage';
 import ContactPage from './pages/ContactPage';
+import CommonLayout from './components/common/CommonLayout';
 
 function App() {
 
   return (
     <>
     <Routes>
-      <Route index element={<HomePage/>}/>
-      <Route path='/product-list' element={<ProductListPages/>}/>
-      <Route path='/product-details' element={<ProductDetailsPages/>}/>
-      <Route path='/cart' element={<CartPage/>}/>
-      <Route path='/checkout' element={<CheckOutPage/>}/>
-      <Route path='/register' element={<RegisterPage/>}/>
-      <Route path='/my-account' element={<MyAccountsPage/>}/>
-      <Route path='/blogs' element={<BlogsPage/>}/>
-      <Route path='/blog-details' element={<BlogDetailsPage/>}/>
-      <Route path='/contact' element={<ContactPage/>}/>
+      <Route path='/' element={<CommonLayout/>}>
+        <Route index element={<HomePage/>}/>
+        <Route path='/product-list' element={<ProductListPages/>}/>
+        <Route path='/product-details' element={<ProductDetailsPages/>}/>
+        <Route path='/cart' element={<CartPage/>}/>
+        <Route path='/checkout' element={<CheckOutPage/>}/>
+        <Route path='/register' element={<RegisterPage/>}/>
+        <Route path='/my-account' element={<MyAccountsPage/>}/>
+        <Route path='/blogs' element={<BlogsPage/>}/>
+        <Route path='/blog-details' element={<BlogDetailsPage/>}/>
+        <Route path='/contact' element={<ContactPage/>}/>
+      </Route>
     </Routes>
     </>
   )
