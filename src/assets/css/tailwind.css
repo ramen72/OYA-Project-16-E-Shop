@@ -1,0 +1,33 @@
+@import "tailwindcss";
+
+@theme {
+  --color-black: #303030;
+  --color-black-15: #30303026;
+  --color-black-25: #30303040;
+  --color-black-50: #30303080;
+  --color-black-75: #303030bf;
+
+  --color-lightGray: #f4f4f4;
+  --color-orange: #ff624c;
+  --color-yellow: #fed550;
+  --color-orange10: #ffefed;
+}
+
+.slick-prev:before {
+  display: none;
+}
+.slick-next:before {
+  display: none;
+}
+/* 
+    heading-1: 56px;
+    heading-2: 36px;
+    heading-3: 24px;
+    heading-4: 20px;
+    heading-6: 16px;
+    heading-8: 14px;
+    para: 20px; 
+*/
+.t {
+  background: #30303026;
+}
