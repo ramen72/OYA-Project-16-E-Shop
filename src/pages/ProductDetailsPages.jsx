@@ -1,11 +1,7 @@
-import React from 'react';
+import React from "react";
 
 const ProductDetailsPages = () => {
-    return (
-        <div>
-            ProductDetailsPages
-        </div>
-    );
+  return <>ProductDetailsPages</>;
 };
 
 export default ProductDetailsPages;

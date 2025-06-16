@@ -112,10 +112,13 @@ const NavBar = () => {
                   </button>
                   {isDropdownOpen && (
                     <div className="w-48 bg-white absolute top-9 z-10 mt-2 rounded-md shadow-lg overflow-hidden">
-                      <ul className='py-2 font-["Montserrat] font-normal text-base leading-6 text-black'>
-                        <li className="px-4 py-2 transition-all duration-200 hover:bg-gray-200 cursor-pointer">
-                          Product-1
-                        </li>
+                      <div className='py-2 font-["Montserrat] font-normal text-base leading-6 text-black'>
+                        <Link
+                          to={"/product-list"}
+                          className="block px-4 py-2 transition-all duration-200 hover:bg-gray-200 cursor-pointer"
+                        >
+                          Product List
+                        </Link>
                         <li className="px-4 py-2 transition-all duration-200 hover:bg-gray-200 cursor-pointer">
                           Product-2
                         </li>
@@ -131,7 +134,7 @@ const NavBar = () => {
                         <li className="px-4 py-2 transition-all duration-200 hover:bg-gray-200 cursor-pointer">
                           Product-6
                         </li>
-                      </ul>
+                      </div>
                     </div>
                   )}
                 </li>
