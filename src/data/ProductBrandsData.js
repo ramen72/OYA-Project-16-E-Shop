@@ -43,36 +43,36 @@ const ProductBrandsData = [
     logo: "https://logo.clearbit.com/panasonic.com",
     isBrandSelected: false,
   },
-  {
-    id: 8,
-    name: "Sony",
-    logo: "https://logo.clearbit.com/sony.com",
-    isBrandSelected: false,
-  },
-  {
-    id: 9,
-    name: "Acer",
-    logo: "https://logo.clearbit.com/acer.com",
-    isBrandSelected: false,
-  },
-  {
-    id: 10,
-    name: "Microsoft",
-    logo: "https://logo.clearbit.com/microsoft.com",
-    isBrandSelected: false,
-  },
-  {
-    id: 11,
-    name: "Huawei",
-    logo: "https://logo.clearbit.com/huawei.com",
-    isBrandSelected: false,
-  },
-  {
-    id: 12,
-    name: "LG",
-    logo: "https://logo.clearbit.com/lg.com",
-    isBrandSelected: false,
-  },
+  // {
+  //   id: 8,
+  //   name: "Sony",
+  //   logo: "https://logo.clearbit.com/sony.com",
+  //   isBrandSelected: false,
+  // },
+  // {
+  //   id: 9,
+  //   name: "Acer",
+  //   logo: "https://logo.clearbit.com/acer.com",
+  //   isBrandSelected: false,
+  // },
+  // {
+  //   id: 10,
+  //   name: "Microsoft",
+  //   logo: "https://logo.clearbit.com/microsoft.com",
+  //   isBrandSelected: false,
+  // },
+  // {
+  //   id: 11,
+  //   name: "Huawei",
+  //   logo: "https://logo.clearbit.com/huawei.com",
+  //   isBrandSelected: false,
+  // },
+  // {
+  //   id: 12,
+  //   name: "LG",
+  //   logo: "https://logo.clearbit.com/lg.com",
+  //   isBrandSelected: false,
+  // },
 ];
 
 export default ProductBrandsData;
