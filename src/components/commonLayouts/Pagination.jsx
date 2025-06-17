@@ -1,6 +1,8 @@
-import React from "react";
+import React, { useState } from "react";
 
 const Pagination = ({ totalItems, itemPerPage, currentPage, onPageChange }) => {
+  const [isPaginationHover, setIsPaginationHover] = useState(false);
+
   const totalPages = Math.ceil(totalItems / itemPerPage);
   const maxPagesToShow = 5;
   const pagesToShowBeforeAfter = 3;
@@ -36,7 +38,9 @@ const Pagination = ({ totalItems, itemPerPage, currentPage, onPageChange }) => {
           <button
             key={index}
             onClick={() => onPageChange(item)}
-            className={`w-12 h-12 rounded text-black font-["poppins"] text-xl cursor-pointer transform transition-all duration-300 hover:bg-orange hover:text-white`}
+            className={`w-12 h-12 rounded text-black font-["poppins"] text-xl cursor-pointer transform transition-all duration-300 hover:bg-orange hover:text-white ${
+              isPaginationHover && "bg-orange text-white"
+            }`}
           >
             {item}
           </button>

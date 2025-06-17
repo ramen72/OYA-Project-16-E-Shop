@@ -182,7 +182,7 @@ const ProductListPages = () => {
                     />
                   </button>
                   <div
-                    className={`flex flex-col gap-y-3 font-['montserrat'] font-normal text-base leading-6 text-black capitalize overflow-hidden ${
+                    className={`flex flex-col gap-y-3 font-['montserrat'] font-normal text-base leading-6 text-black capitalize  ${
                       !isPriceOpen && "scale-y-0 h-0"
                     } transition-all duration-300`}
                   >
@@ -295,7 +295,7 @@ const ProductListPages = () => {
                   <ProductLayout
                     key={index}
                     imageSrc={item.imageSrc}
-                    categories={`${item.categories} ${index + 1}`}
+                    categories={`${item.categories}`}
                     title={item.title}
                     rating={item.rating}
                     totalRating={item.totalRating}
