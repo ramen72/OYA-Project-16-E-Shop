@@ -2,7 +2,7 @@ import React from "react";
 
 const Pagination = ({ totalItems, itemPerPage, currentPage, onPageChange }) => {
   const totalPages = Math.ceil(totalItems / itemPerPage);
-  const maxPagesToShow = 10;
+  const maxPagesToShow = 5;
   const pagesToShowBeforeAfter = 3;
   let startPage = Math.max(1, currentPage - pagesToShowBeforeAfter);
   let endPage = Math.min(totalPages, currentPage + pagesToShowBeforeAfter);

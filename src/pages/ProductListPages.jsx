@@ -16,7 +16,7 @@ const ProductListPages = () => {
   );
   const [isBrandSelected, setIsBrandSelected] = useState(ProductBrandsData);
   const [currentPage, setCurrentPage] = useState(1);
-  const itemPerPage = 10;
+  const itemPerPage = 16;
 
   // Categories Dropdown
   const handleClickForCategories = (id) => {
@@ -42,6 +42,24 @@ const ProductListPages = () => {
   const [minValue, setMinValue] = useState(0);
   const [maxValue, setMaxValue] = useState(1000);
 
+  // Input Handler
+  function handleInputMin(value) {
+    console.log(value);
+    if (value === "") {
+      setMinValue(1);
+    } else {
+      if (value >= 0 && value <= maxValue) {
+        setMinValue(value);
+      }
+    }
+  }
+
+  function handleInputMax(value) {
+    if (value > minValue && value <= 1000) {
+      setMaxValue(value);
+    }
+  }
+
   const updateSlider = (type, value) => {
     if (type == "min") {
       const newMinValue = Math.min(parseInt(value), maxValue);
@@ -55,7 +73,6 @@ const ProductListPages = () => {
   const minPercent = (minValue / 1000) * 100;
   const maxPercent = (maxValue / 1000) * 100;
 
-  // const products = Array.from({ length: 160 }, (_, index));
   const startIndex = (currentPage - 1) * itemPerPage;
   const currentProducts = ProductsDataForPagination.slice(
     startIndex,
@@ -170,17 +187,23 @@ const ProductListPages = () => {
                     } transition-all duration-300`}
                   >
                     <div className={`w-[259px]`}>
-                      <div className={`flex justify-between mb-10`}>
-                        <span
-                          className={` border border-black-50 py-7 px-11 rounded-[10px] font-["Montserrat"]`}
-                        >
-                          $ {minValue}
-                        </span>
-                        <span
-                          className={` border border-black-50 py-7 px-11 rounded-[10px] font-["Montserrat"]`}
-                        >
-                          $ {maxValue}
-                        </span>
+                      <div className={`flex items-center gap-x-[11px] mb-10`}>
+                        <input
+                          type="number"
+                          onChange={(e) => handleInputMin(e.target.value)}
+                          value={minValue}
+                          min={0}
+                          max={1000}
+                          className={`w-[124px] border border-black-50 py-7 rounded-[10px] font-["Montserrat"] font-normal text-base text-center outline-0`}
+                        />
+                        <input
+                          type="number"
+                          onChange={(e) => handleInputMax(e.target.value)}
+                          value={maxValue}
+                          min={0}
+                          max={1000}
+                          className={`w-[124px] border border-black-50 py-7 rounded-[10px] font-["Montserrat"] font-normal text-base text-center outline-0`}
+                        />
                       </div>
                       <div
                         className={`relative w-full h-0.5 bg-black-25 rounded`}
