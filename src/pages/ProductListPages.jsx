@@ -42,28 +42,18 @@ const ProductListPages = () => {
   const [minValue, setMinValue] = useState(0);
   const [maxValue, setMaxValue] = useState(1000);
 
-  // Input Handler
-  function handleInputMin(value) {
-    console.log(value);
-    if (value === "") {
-      setMinValue(1);
-    } else {
-      if (value >= 0 && value <= maxValue) {
-        setMinValue(value);
-      }
-    }
-  }
-
-  function handleInputMax(value) {
-    if (value > minValue && value <= 1000) {
-      setMaxValue(value);
-    }
-  }
-
   const updateSlider = (type, value) => {
+    let partsValue = parseInt(value);
+    if (isNaN(partsValue)) return;
     if (type == "min") {
-      const newMinValue = Math.min(parseInt(value), maxValue);
-      setMinValue(newMinValue);
+      if (partsValue > maxValue) {
+        setMinValue(maxValue);
+      } else {
+        setMinValue(partsValue);
+      }
+      console.log(minValue);
+      // const newMinValue = Math.min(parseInt(value), maxValue);
+      // setMinValue(newMinValue);
     } else {
       const newMaxValue = Math.max(parseInt(value), minValue);
       setMaxValue(newMaxValue);
@@ -188,22 +178,38 @@ const ProductListPages = () => {
                   >
                     <div className={`w-[259px]`}>
                       <div className={`flex items-center gap-x-[11px] mb-10`}>
-                        <input
-                          type="number"
-                          onChange={(e) => handleInputMin(e.target.value)}
-                          value={minValue}
-                          min={0}
-                          max={1000}
-                          className={`w-[124px] border border-black-50 py-7 rounded-[10px] font-["Montserrat"] font-normal text-base text-center outline-0`}
-                        />
-                        <input
-                          type="number"
-                          onChange={(e) => handleInputMax(e.target.value)}
-                          value={maxValue}
-                          min={0}
-                          max={1000}
-                          className={`w-[124px] border border-black-50 py-7 rounded-[10px] font-["Montserrat"] font-normal text-base text-center outline-0`}
-                        />
+                        <div
+                          className={` w-[124px] flex justify-center items-center gap-x-1 border border-black-50 py-7 rounded-[10px] font-["Montserrat"] font-normal text-base`}
+                        >
+                          <span>$</span>
+                          <input
+                            type="number"
+                            // onChange={(e) => handleInputMin("min", e.target.value)}
+                            onChange={(e) =>
+                              updateSlider("min", e.target.value)
+                            }
+                            value={minValue}
+                            min={0}
+                            max={1000}
+                            step={maxValue}
+                            className={`outline-0 inline-block border`}
+                          />
+                        </div>
+                        <div className="flex justify-center items-center gap-x-2">
+                          <span>$</span>
+                          <input
+                            type="number"
+                            // onChange={(e) => handleInputMax("max", e.target.value)}
+                            onChange={(e) =>
+                              updateSlider("max", e.target.value)
+                            }
+                            value={maxValue}
+                            min={0}
+                            max={1000}
+                            step={maxValue}
+                            className={`w-[124px] border border-black-50 py-7 rounded-[10px] font-["Montserrat"] font-normal text-base text-center outline-0`}
+                          />
+                        </div>
                       </div>
                       <div
                         className={`relative w-full h-0.5 bg-black-25 rounded`}
@@ -212,7 +218,11 @@ const ProductListPages = () => {
                           className={`h-full bg-orange rounded absolute top-1/2 -translate-y-1/2`}
                           style={{
                             left: `${minPercent}%`,
-                            width: `${maxPercent - minPercent}%`,
+                            width: `${
+                              maxPercent - minPercent >= 100
+                                ? 100
+                                : maxPercent - minPercent
+                            }%`,
                           }}
                         ></div>
                         <input
@@ -237,56 +247,6 @@ const ProductListPages = () => {
                     </div>
                   </div>
                 </div>
-
-                {/* Price */}
-                {/* <div className={`pt-10`}>
-                <h3
-                  className={`font-['montserrat'] font-bold text-xl text-black mb-6`}
-                >
-                  Price
-                </h3>
-                <div className={`w-[259px]`}>
-                  <div className={`flex justify-between mb-10`}>
-                    <span
-                      className={` border border-black-50 py-7 px-11 rounded-[10px] font-["Montserrat"]`}
-                    >
-                      $ {minValue}
-                    </span>
-                    <span
-                      className={` border border-black-50 py-7 px-11 rounded-[10px] font-["Montserrat"]`}
-                    >
-                      $ {maxValue}
-                    </span>
-                  </div>
-                  <div className={`relative w-full h-0.5 bg-black-25 rounded`}>
-                    <div
-                      className={`h-full bg-orange rounded absolute top-1/2 -translate-y-1/2`}
-                      style={{
-                        left: `${minPercent}%`,
-                        width: `${maxPercent - minPercent}%`,
-                      }}
-                    ></div>
-                    <input
-                      type="range"
-                      value={minValue}
-                      min={0}
-                      max={1000}
-                      step={1}
-                      onChange={(e) => updateSlider("min", e.target.value)}
-                      className="w-full h-0.5 bg-transparent pointer-events-none appearance-none absolute"
-                    />
-                    <input
-                      type="range"
-                      min={0}
-                      max={1000}
-                      value={maxValue}
-                      step={1}
-                      onChange={(e) => updateSlider("max", e.target.value)}
-                      className="w-full h-0.5 bg-transparent pointer-events-none appearance-none absolute"
-                    />
-                  </div>
-                </div>
-              </div> */}
               </div>
             </div>
             <div className={`w-[1139px]`}>
