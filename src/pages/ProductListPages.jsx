@@ -6,6 +6,7 @@ import ProductBrandsData from "../data/ProductBrandsData";
 import ProductLayout from "../components/commonLayouts/ProductLayout";
 import { ProductsDataForPagination } from "../data/ProductsDataForPagination";
 import Pagination from "../components/commonLayouts/Pagination";
+import { Bounce, toast } from "react-toastify";
 
 const ProductListPages = () => {
   const [isCategoriesOpen, setIsCategoriesOpen] = useState(true);
@@ -43,20 +44,46 @@ const ProductListPages = () => {
   const [maxValue, setMaxValue] = useState(1000);
 
   const updateSlider = (type, value) => {
-    let partsValue = parseInt(value);
-    if (isNaN(partsValue)) return;
-    if (type == "min") {
-      if (partsValue > maxValue) {
-        setMinValue(maxValue);
+    const parseValue = parseInt(value);
+    if (parseValue > 1000 || parseValue < 0) {
+      if (type == "min") {
+        setMinValue(0);
+        console.log("Min and Max value must be in between 0 to 1000");
+        return;
       } else {
-        setMinValue(partsValue);
+        setMaxValue(1000);
+        toast.error(`Min and Max value must be in between 0 to 1000`, {
+          position: "bottom-center",
+          autoClose: 5000,
+          hideProgressBar: false,
+          closeOnClick: false,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+          theme: "colored",
+          transition: Bounce,
+        });
+        console.log("Min and Max value must be in between 0 to 1000");
+        return;
       }
-      console.log(minValue);
-      // const newMinValue = Math.min(parseInt(value), maxValue);
-      // setMinValue(newMinValue);
+    }
+
+    if (isNaN(parseValue)) return;
+
+    if (type == "min") {
+      if (parseValue > maxValue) {
+        setMinValue(maxValue);
+        return;
+      } else {
+        setMinValue(parseValue);
+        return;
+      }
     } else {
-      const newMaxValue = Math.max(parseInt(value), minValue);
-      setMaxValue(newMaxValue);
+      if (parseValue < minValue) {
+        setMaxValue(minValue);
+      } else {
+        setMaxValue(parseValue);
+      }
     }
   };
 
@@ -184,30 +211,28 @@ const ProductListPages = () => {
                           <span>$</span>
                           <input
                             type="number"
-                            // onChange={(e) => handleInputMin("min", e.target.value)}
                             onChange={(e) =>
                               updateSlider("min", e.target.value)
                             }
-                            value={minValue}
                             min={0}
                             max={1000}
-                            step={maxValue}
-                            className={`outline-0 inline-block border`}
+                            step={1000}
+                            value={minValue}
                           />
                         </div>
-                        <div className="flex justify-center items-center gap-x-2">
+                        <div
+                          className={` w-[124px] flex justify-center items-center gap-x-1 border border-black-50 py-7 rounded-[10px] font-["Montserrat"] font-normal text-base`}
+                        >
                           <span>$</span>
                           <input
                             type="number"
-                            // onChange={(e) => handleInputMax("max", e.target.value)}
                             onChange={(e) =>
                               updateSlider("max", e.target.value)
                             }
-                            value={maxValue}
                             min={0}
                             max={1000}
-                            step={maxValue}
-                            className={`w-[124px] border border-black-50 py-7 rounded-[10px] font-["Montserrat"] font-normal text-base text-center outline-0`}
+                            step={1000}
+                            value={maxValue}
                           />
                         </div>
                       </div>
