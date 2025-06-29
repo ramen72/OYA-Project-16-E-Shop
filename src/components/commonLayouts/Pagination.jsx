@@ -5,20 +5,47 @@ const Pagination = ({ totalItems, itemPerPage, currentPage, onPageChange }) => {
 
   const totalPages = Math.ceil(totalItems / itemPerPage);
   const maxPagesToShow = 5;
-  const pagesToShowBeforeAfter = 3;
-  let startPage = Math.max(1, currentPage - pagesToShowBeforeAfter);
-  let endPage = Math.min(totalPages, currentPage + pagesToShowBeforeAfter);
 
-  if (endPage - startPage + 1 < maxPagesToShow) {
-    if (startPage > 1) {
-      startPage = Math.max(1, endPage - maxPagesToShow + 1);
+  const pages = [];
+  if (totalPages <= maxPagesToShow) {
+    for (let i = 0; i <= totalPages; i++) {
+      pages.push(i);
     }
-    endPage = Math.min(totalPages, startPage + maxPagesToShow - 1);
+  } else {
+    const startPages = [1, 2];
+    const endPages = [totalPages - 1, totalPages];
+    const middlePages = [currentPage - 1, currentPage, currentPage + 1].filter(
+      (p) => p > 2 && p < totalPages - 1
+    );
+    const uniquePages = Array.from(
+      new Set([...startPages, ...middlePages, ...endPages])
+    ).sort((a, b) => a - b);
+
+    for (let i = 0; i < uniquePages.length; i++) {
+      pages.push(uniquePages[i]);
+      if (
+        i < uniquePages.length - 1 &&
+        uniquePages[i + 1] - uniquePages[1] > 1
+      ) {
+        pages.push("...");
+      }
+    }
   }
-  const pageNumber = [];
-  for (let i = startPage; i <= endPage; i++) {
-    pageNumber.push(i);
-  }
+
+  // const pagesToShowBeforeAfter = 3;
+  // let startPage = Math.max(1, currentPage - pagesToShowBeforeAfter);
+  // let endPage = Math.min(totalPages, currentPage + pagesToShowBeforeAfter);
+
+  // if (endPage - startPage + 1 < maxPagesToShow) {
+  //   if (startPage > 1) {
+  //     startPage = Math.max(1, endPage - maxPagesToShow + 1);
+  //   }
+  //   endPage = Math.min(totalPages, startPage + maxPagesToShow - 1);
+  // }
+  // const pageNumber = [];
+  // for (let i = startPage; i <= endPage; i++) {
+  //   pageNumber.push(i);
+  // }
 
   //   number handleClick
   const handleNumberClick = (item) => {
@@ -34,7 +61,7 @@ const Pagination = ({ totalItems, itemPerPage, currentPage, onPageChange }) => {
         >
           &lt;
         </button>
-        {pageNumber.map((item, index) => (
+        {pages.map((item, index) => (
           <button
             key={index}
             onClick={() => onPageChange(item)}
