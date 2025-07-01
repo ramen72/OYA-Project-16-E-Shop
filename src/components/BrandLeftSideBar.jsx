@@ -29,28 +29,28 @@ const BrandLeftSideBar = () => {
             className={`${!isBrandsOpen && "rotate-180"} cursor-pointer`}
           />
         </button>
-        <ul
-          className={`flex flex-col gap-y-3 font-['montserrat'] font-normal text-base leading-6 text-black capitalize overflow-hidden ${
-            !isBrandsOpen && "scale-y-0 h-0"
-          } transition-all duration-300`}
-        >
-          {isBrandSelected.map((item) => (
-            <li
-              key={item.id}
-              className={`${item.isBrandSelected && "font-bold"}`}
-            >
-              <input
-                type="checkbox"
-                onChange={() => handleClickForBrands(item.id)}
-                checked={item.isBrandSelected}
-                name=""
-                id=""
-                className={`mr-2`}
-              />{" "}
-              {item.name}
-            </li>
-          ))}
-        </ul>
+        {isBrandsOpen && (
+          <ul
+            className={`flex flex-col gap-y-3 font-['montserrat'] font-normal text-base leading-6 text-black capitalize transition-all duration-300`}
+          >
+            {isBrandSelected.map((item) => (
+              <li
+                key={item.id}
+                className={`${item.isBrandSelected && "font-bold"}`}
+              >
+                <input
+                  type="checkbox"
+                  onChange={() => handleClickForBrands(item.id)}
+                  checked={item.isBrandSelected}
+                  name=""
+                  id=""
+                  className={`mr-2`}
+                />{" "}
+                {item.name}
+              </li>
+            ))}
+          </ul>
+        )}
       </div>
     </>
   );

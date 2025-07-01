@@ -33,28 +33,28 @@ const CategoryLeftSideBar = () => {
             className={`${!isCategoriesOpen && "rotate-180"} cursor-pointer`}
           />
         </button>
-        <ul
-          className={`flex flex-col gap-y-3 font-['montserrat'] font-normal text-base leading-6 text-black capitalize overflow-hidden ${
-            !isCategoriesOpen && "scale-y-0 h-0"
-          } transition-all duration-300`}
-        >
-          {isCategorySelected.map((item) => (
-            <li
-              key={item.id}
-              className={`${item.isCategorySelected && "font-bold"}`}
-            >
-              <input
-                type="checkbox"
-                onChange={() => handleClickForCategories(item.id)}
-                checked={item.isCategorySelected}
-                name=""
-                id=""
-                className={`mr-2`}
-              />{" "}
-              {item.name}
-            </li>
-          ))}
-        </ul>
+        {isCategoriesOpen && (
+          <ul
+            className={`flex flex-col gap-y-3 font-['montserrat'] font-normal text-base leading-6 text-black capitalize  transition-all duration-300`}
+          >
+            {isCategorySelected.map((item) => (
+              <li
+                key={item.id}
+                className={`${item.isCategorySelected && "font-bold"}`}
+              >
+                <input
+                  type="checkbox"
+                  onChange={() => handleClickForCategories(item.id)}
+                  checked={item.isCategorySelected}
+                  name=""
+                  id=""
+                  className={`mr-2`}
+                />{" "}
+                {item.name}
+              </li>
+            ))}
+          </ul>
+        )}
       </div>
     </>
   );
