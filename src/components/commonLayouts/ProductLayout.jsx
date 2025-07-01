@@ -79,9 +79,12 @@ const ProductLayout = ({
         <p className='font-["Montserrat"] font-normal text-sm leading-5 tracking-[5px] text-black uppercase mt-11 mb-4'>
           {categories}
         </p>
-        <h3 className='font-["Poppins"] font-semibold text-xl leading-[30px] text-black transition-all duration-300 group-hover:text-orange group-hover:underline'>
+        <Link
+          to={"/product-details"}
+          className='font-["Poppins"] font-semibold text-xl leading-[30px] text-black transition-all duration-300 group-hover:text-orange group-hover:underline'
+        >
           {title}
-        </h3>
+        </Link>
         <div
           className={`flex items-center gap-2 ${ratingColor} transition-all duration-300 group-hover:text-yellow mt-1`}
         >
