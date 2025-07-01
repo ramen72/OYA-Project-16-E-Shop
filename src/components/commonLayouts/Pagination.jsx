@@ -1,6 +1,12 @@
 import React, { useState } from "react";
 
-const Pagination = ({ totalItems, itemPerPage, currentPage, onPageChange }) => {
+const Pagination = ({
+  totalItems,
+  itemPerPage,
+  currentPage,
+  onPageChange,
+  position,
+}) => {
   const [isPaginationHover, setIsPaginationHover] = useState(false);
   const [active, setActive] = useState(1);
 
@@ -68,7 +74,7 @@ const Pagination = ({ totalItems, itemPerPage, currentPage, onPageChange }) => {
           &gt;
         </button>
       </div>
-      <span>
+      <span className={`${position && "absolute top-17"}`}>
         Showing{" "}
         {itemPerPage * (currentPage - 1) < 1
           ? 1
