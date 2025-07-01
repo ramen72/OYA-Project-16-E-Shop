@@ -48,8 +48,8 @@ const CategoryLeftSideBar = () => {
                   checked={item.isCategorySelected}
                   name=""
                   id=""
-                  className={`mr-2`}
-                />{" "}
+                  className={`mr-2 appearance-none w-4 h-4 border border-[#303030] rounded relative checked:bg-[#ff624c] checked:border-[#ff624c] checked:after:content-['✔'] checked:after:text-white checked:after:absolute checked:after:top-[-4px] checked:after:left-[2px] checked:after:text-sm`}
+                />
                 {item.name}
               </li>
             ))}

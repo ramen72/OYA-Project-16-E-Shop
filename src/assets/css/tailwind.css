@@ -27,22 +27,6 @@
 .slick-next:before {
   display: none;
 }
-/* 
-    heading-1: 56px;
-    heading-2: 36px;
-    heading-3: 24px;
-    heading-4: 20px;
-    heading-6: 16px;
-    heading-8: 14px;
-    para: 20px; 
-*/
-
-/* input[type="number"]::-webkit-outer-spin-button {
-  appearance: none;
-}
-input[type="number"]::-webkit-inner-spin-button {
-  appearance: none;
-} */
 
 input[type="range"]::-webkit-slider-thumb {
   width: 16px;
