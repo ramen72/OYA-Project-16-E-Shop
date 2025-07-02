@@ -1,3 +1,4 @@
+import React from "react";
 import { Route, Routes } from "react-router-dom";
 import "./assets/css/tailwind.css";
 import HomePage from "./pages/HomePage";
