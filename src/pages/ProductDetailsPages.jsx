@@ -1,13 +1,16 @@
 import { useEffect, useRef, useState } from "react";
 import Container from "../components/commonLayouts/Container";
 import Slider from "react-slick";
-import { BsArrowsFullscreen } from "react-icons/bs";
+import { BsArrowsFullscreen, BsCart3 } from "react-icons/bs";
 import { IoCloseSharp } from "react-icons/io5";
 import { IoMdStar } from "react-icons/io";
 import HeadPhoneIcon from "../assets/icons/HeadPhoneIcon";
 import VerifiedIcon from "../assets/icons/VerifiedIcon";
 import DeliveryIcon from "../assets/icons/DeliveryIcon";
 import { FaMinus, FaPlus } from "react-icons/fa";
+import Button from "../components/Button";
+import { Link } from "react-router-dom";
+import CartIcon from "../assets/icons/CartIcon";
 
 const ProductDetailsPages = () => {
   const [nav1, setNav1] = useState(null);
@@ -382,7 +385,7 @@ const ProductDetailsPages = () => {
               </div>
             </div>
             <div className={`w-[41.5132%] flex justify-between items-center`}>
-              <div className={`border flex items-center gap-x-[92px]`}>
+              <div className={`flex items-center gap-x-[80px]`}>
                 <button
                   onClick={() => handelClickForProduct()}
                   className={`w-14 h-14 text-base text-black cursor-pointer transition-all duration-200 hover:bg-lightGray rounded-full flex justify-center items-center`}
@@ -390,7 +393,7 @@ const ProductDetailsPages = () => {
                   <FaMinus />
                 </button>
                 <h5
-                  className={`font-["poppins"] font-semibold text-4xl text-black`}
+                  className={`min-w-16 font-["poppins"] font-semibold text-4xl text-center text-black`}
                 >
                   {productCount}
                 </h5>
@@ -401,9 +404,15 @@ const ProductDetailsPages = () => {
                   <FaPlus />
                 </button>
               </div>
-              <div className={`border flex justify-end items-center gap-x-4`}>
-                <button>x</button>
-                <button>CArd</button>
+              <div
+                className={`w-[253px] flex justify-end items-center gap-x-4`}
+              >
+                <Button text="Buy Now" />
+                <Link to={"#"}>
+                  <BsCart3
+                    className={`w-[62px] h-[62px] p-3 text-2xl text-orange border border-orange rounded-[10px]`}
+                  />
+                </Link>
               </div>
             </div>
           </div>

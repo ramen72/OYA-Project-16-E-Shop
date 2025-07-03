@@ -1,7 +1,7 @@
 import React from "react";
 
 const Button = ({
-  text,
+  text = "Button Text",
   bg = "bg-[#FF624C]",
   font = "font-montserrat",
   fontWeight = "font-bold",
