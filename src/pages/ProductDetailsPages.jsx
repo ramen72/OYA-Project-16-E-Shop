@@ -253,6 +253,87 @@ const ProductDetailsPages = () => {
                   </del>
                 </small>
               </div>
+              <ul className={`flex flex-col gap-y-4`}>
+                <li className={`flex justify-start items-center`}>
+                  <h5
+                    className={`w-[27%] font-["poppins"] font-semibold text-xl leading-[30px] text-black capitalize`}
+                  >
+                    Brand
+                  </h5>
+                  <p
+                    className={`font-["montserrat"] font-normal text-xl leading-[30px] text-black capitalize`}
+                  >
+                    NexSUS Tech Company
+                  </p>
+                </li>
+                <li className={`flex justify-start items-center`}>
+                  <h5
+                    className={`w-[27%] font-["poppins"] font-semibold text-xl leading-[30px] text-black capitalize`}
+                  >
+                    Size
+                  </h5>
+                  <p
+                    className={`font-["montserrat"] font-normal text-xl leading-[30px] text-black capitalize`}
+                  >
+                    15.7 x 11.1 x 1.0 inches (W x D x H)
+                  </p>
+                </li>
+                <li className={`flex justify-start items-center`}>
+                  <h5
+                    className={`w-[27%] font-["poppins"] font-semibold text-xl leading-[30px] text-black capitalize`}
+                  >
+                    Weight
+                  </h5>
+                  <p
+                    className={`font-["montserrat"] font-normal text-xl leading-[30px] text-black capitalize`}
+                  >
+                    6.28 pounds
+                  </p>
+                </li>
+                <li className={`flex justify-start items-center`}>
+                  <h5
+                    className={`w-[27%] font-["poppins"] font-semibold text-xl leading-[30px] text-black capitalize`}
+                  >
+                    Delivery
+                  </h5>
+                  <p
+                    className={`font-["montserrat"] font-normal text-xl leading-[30px] text-black capitalize`}
+                  >
+                    Worldwide
+                  </p>
+                </li>
+                <li className={`flex justify-start items-start`}>
+                  <h5
+                    className={`w-[27%] font-["poppins"] font-semibold text-xl leading-[30px] text-black capitalize`}
+                  >
+                    Variant
+                  </h5>
+                  <div
+                    className={`w-[73%] flex flex-wrap justify-start items-start gap-x-1 gap-y-2`}
+                  >
+                    <button
+                      className={`font-["montserrat"] font-bold text-base leading-6 text-black py-4 px-8 border border-black-50 rounded-[5px] capitalize cursor-pointer transition-all drop-shadow-blue-300 hover:text-orange hover:border-orange`}
+                    >
+                      Space Gray
+                    </button>
+                    <button
+                      className={`font-["montserrat"] font-bold text-base leading-6 text-orange py-4 px-8 border border-orange rounded-[5px] capitalize cursor-pointer transition-all drop-shadow-blue-300 hover:text-orange hover:border-orange`}
+                    >
+                      Off white
+                    </button>
+                    <button
+                      className={`font-["montserrat"] font-bold text-base leading-6 text-black py-4 px-8 border border-black-50 rounded-[5px] capitalize cursor-pointer transition-all drop-shadow-blue-300 hover:text-orange hover:border-orange`}
+                    >
+                      Jet Black
+                    </button>
+                    <button
+                      className={`font-["montserrat"] font-bold text-base leading-6 text-black-25 py-4 px-8 border border-black-25 rounded-[5px] capitalize cursor-pointer transition-all drop-shadow-blue-300 hover:text-orange hover:border-orange`}
+                    >
+                      Cinnamon Red
+                    </button>
+                  </div>
+                </li>
+              </ul>
             </div>
           </div>
           {/* Modal */}
