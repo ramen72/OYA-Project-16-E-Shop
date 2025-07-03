@@ -4,12 +4,17 @@ import Slider from "react-slick";
 import { BsArrowsFullscreen } from "react-icons/bs";
 import { IoCloseSharp } from "react-icons/io5";
 import { IoMdStar } from "react-icons/io";
+import HeadPhoneIcon from "../assets/icons/HeadPhoneIcon";
+import VerifiedIcon from "../assets/icons/VerifiedIcon";
+import DeliveryIcon from "../assets/icons/DeliveryIcon";
+import { FaMinus, FaPlus } from "react-icons/fa";
 
 const ProductDetailsPages = () => {
   const [nav1, setNav1] = useState(null);
   const [nav2, setNav2] = useState(null);
   const [isActiveModel, setIsActiveModel] = useState(false);
   const [image, setImage] = useState("");
+  const [productCount, setProductCount] = useState(1);
   let sliderRef1 = useRef(null);
   let sliderRef2 = useRef(null);
 
@@ -38,10 +43,14 @@ const ProductDetailsPages = () => {
     setIsActiveModel(true);
     console.log("Clicked");
   };
+  const handelClickForProduct = () => {
+    if (productCount <= 1) return;
+    setProductCount(productCount - 1);
+  };
 
   return (
     <>
-      <div className={`mt-16`}>
+      <div className={`mt-16 mb-24`}>
         <Container>
           <div
             className={`flex justify-start items-center gap-x-8 font-["montserrat"] font-normal text-base text-black mb-12`}
@@ -220,7 +229,7 @@ const ProductDetailsPages = () => {
                 </div>
               </Slider>
             </div>
-            <div className={`w-[41.5132%] border`}>
+            <div className={`w-[41.5132%]`}>
               <div
                 className={`flex justify-start items-center gap-x-[10px] font-["montserrat"] text-yellow`}
               >
@@ -334,6 +343,68 @@ const ProductDetailsPages = () => {
                   </div>
                 </li>
               </ul>
+            </div>
+          </div>
+          <div className={`mt-[63px] flex justify-between`}>
+            <div className="w-[54.8026%] flex justify-start items-center gap-x-12 text-black">
+              <div className="flex items-center gap-x-6">
+                <DeliveryIcon />
+                <div>
+                  <h6 className='font-["Montserrat"] font-bold text-base'>
+                    Free Shipping
+                  </h6>
+                  <p className='font-["Montserrat"] font-normal text-base'>
+                    Worldwide available
+                  </p>
+                </div>
+              </div>
+              <div className="flex items-center gap-x-6">
+                <VerifiedIcon />
+                <div>
+                  <h6 className='font-["Montserrat"] font-bold text-base'>
+                    100% Guaranteed
+                  </h6>
+                  <p className='font-["Montserrat"] font-normal text-base'>
+                    Receive product first
+                  </p>
+                </div>
+              </div>
+              <div className="flex items-center gap-x-6">
+                <img src="images/transIcon.svg" alt="" />
+                <div>
+                  <h6 className='font-["Montserrat"] font-bold text-base'>
+                    Return Available
+                  </h6>
+                  <p className='font-["Montserrat"] font-normal text-base'>
+                    See return policy
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div className={`w-[41.5132%] flex justify-between items-center`}>
+              <div className={`border flex items-center gap-x-[92px]`}>
+                <button
+                  onClick={() => handelClickForProduct()}
+                  className={`w-14 h-14 text-base text-black cursor-pointer transition-all duration-200 hover:bg-lightGray rounded-full flex justify-center items-center`}
+                >
+                  <FaMinus />
+                </button>
+                <h5
+                  className={`font-["poppins"] font-semibold text-4xl text-black`}
+                >
+                  {productCount}
+                </h5>
+                <button
+                  onClick={() => setProductCount(productCount + 1)}
+                  className={`w-14 h-14 text-base text-black cursor-pointer transition-all duration-200 hover:bg-lightGray rounded-full flex justify-center items-center`}
+                >
+                  <FaPlus />
+                </button>
+              </div>
+              <div className={`border flex justify-end items-center gap-x-4`}>
+                <button>x</button>
+                <button>CArd</button>
+              </div>
             </div>
           </div>
           {/* Modal */}
