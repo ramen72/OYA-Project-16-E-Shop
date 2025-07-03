@@ -234,11 +234,25 @@ const ProductDetailsPages = () => {
                 </span>
               </div>
               <h2
-                className={`font-["poppins"] font-semibold text-4xl leading-[46px]`}
+                className={`font-["poppins"] font-semibold text-4xl leading-[46px] mt-4 mb-6 pb-6 border-b b border-black-25`}
               >
                 NexSUS ROCK Strix Scar 17 Gaming Laptop 15.7” 1TB SSD 16GB RAM
                 Pro
               </h2>
+              <div className={`flex justify-start items-center gap-x-4`}>
+                <p
+                  className={`font-["poppins"] font-bold text-[56px] text-orange`}
+                >
+                  $2,999.99
+                </p>
+                <small>
+                  <del
+                    className={`font-["montserrat"] font-normal text-xl text-black-50`}
+                  >
+                    $45,499.99
+                  </del>
+                </small>
+              </div>
             </div>
           </div>
           {/* Modal */}
