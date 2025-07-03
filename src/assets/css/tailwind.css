@@ -2,6 +2,7 @@
 
 @theme {
   --color-black: #303030;
+  --color-black-5: #3030300d;
   --color-black-15: #30303026;
   --color-black-25: #30303040;
   --color-black-50: #30303080;
@@ -16,9 +17,6 @@
 
   --font-montserrat: ` "Montserrat", "sans-serif" `;
   --font-poppins: ` "Poppins", "sans-serif" `;
-}
-.t {
-  color: #f4f4f480;
 }
 
 .slick-prev:before {
@@ -52,4 +50,7 @@ input[type="range"]::-moz-range-thumb {
   background-color: #ff624c;
   cursor: pointer;
   -webkit-appearance: none;
+}
+.t {
+  color: #3030300d;
 }

@@ -2,10 +2,14 @@ import { useEffect, useRef, useState } from "react";
 import Container from "../components/commonLayouts/Container";
 import Slider from "react-slick";
 import { BsArrowsFullscreen } from "react-icons/bs";
+import { IoCloseSharp } from "react-icons/io5";
+import { IoMdStar } from "react-icons/io";
 
 const ProductDetailsPages = () => {
   const [nav1, setNav1] = useState(null);
   const [nav2, setNav2] = useState(null);
+  const [isActiveModel, setIsActiveModel] = useState(false);
+  const [image, setImage] = useState("");
   let sliderRef1 = useRef(null);
   let sliderRef2 = useRef(null);
 
@@ -29,7 +33,9 @@ const ProductDetailsPages = () => {
     slidesToScroll: 1,
   };
 
-  const handleClickForModel = () => {
+  const handleClickForModel = (url) => {
+    setImage(url);
+    setIsActiveModel(true);
     console.log("Clicked");
   };
 
@@ -60,7 +66,7 @@ const ProductDetailsPages = () => {
             </span>
           </div>
           <div className={`flex justify-between`}>
-            <div className={`w-[54.8026%] border`}>
+            <div className={`w-[54.8026%] `}>
               <Slider
                 {...settings}
                 asNavFor={nav2}
@@ -73,7 +79,9 @@ const ProductDetailsPages = () => {
                     <img src="images/product-1.jpg" alt="image" />
                     <BsArrowsFullscreen
                       className={`bg-black-25 p-3 text-5xl text-white rounded-sm transition-all duration-200 hover:bg-black-75 cursor-pointer absolute top-3 right-3`}
-                      onClick={() => handleClickForModel()}
+                      onClick={() =>
+                        handleClickForModel("images/product-1.jpg")
+                      }
                     />
                   </div>
                 </div>
@@ -84,7 +92,9 @@ const ProductDetailsPages = () => {
                     <img src="images/product-2.jpg" alt="image" />
                     <BsArrowsFullscreen
                       className={`bg-black-25 p-3 text-5xl text-white rounded-sm transition-all duration-200 hover:bg-black-75 cursor-pointer absolute top-3 right-3`}
-                      onClick={() => handleClickForModel()}
+                      onClick={() =>
+                        handleClickForModel("images/product-2.jpg")
+                      }
                     />
                   </div>
                 </div>
@@ -95,7 +105,9 @@ const ProductDetailsPages = () => {
                     <img src="images/product-1.jpg" alt="image" />
                     <BsArrowsFullscreen
                       className={`bg-black-25 p-3 text-5xl text-white rounded-sm transition-all duration-200 hover:bg-black-75 cursor-pointer absolute top-3 right-3`}
-                      onClick={() => handleClickForModel()}
+                      onClick={() =>
+                        handleClickForModel("images/product-1.jpg")
+                      }
                     />
                   </div>
                 </div>
@@ -106,7 +118,9 @@ const ProductDetailsPages = () => {
                     <img src="images/product-1.jpg" alt="image" />
                     <BsArrowsFullscreen
                       className={`bg-black-25 p-3 text-5xl text-white rounded-sm transition-all duration-200 hover:bg-black-75 cursor-pointer absolute top-3 right-3`}
-                      onClick={() => handleClickForModel()}
+                      onClick={() =>
+                        handleClickForModel("images/product-1.jpg")
+                      }
                     />
                   </div>
                 </div>
@@ -117,7 +131,9 @@ const ProductDetailsPages = () => {
                     <img src="images/product-1.jpg" alt="image" />
                     <BsArrowsFullscreen
                       className={`bg-black-25 p-3 text-5xl text-white rounded-sm transition-all duration-200 hover:bg-black-75 cursor-pointer absolute top-3 right-3`}
-                      onClick={() => handleClickForModel()}
+                      onClick={() =>
+                        handleClickForModel("images/product-1.jpg")
+                      }
                     />
                   </div>
                 </div>
@@ -128,7 +144,9 @@ const ProductDetailsPages = () => {
                     <img src="images/product-1.jpg" alt="image" />
                     <BsArrowsFullscreen
                       className={`bg-black-25 p-3 text-5xl text-white rounded-sm transition-all duration-200 hover:bg-black-75 cursor-pointer absolute top-3 right-3`}
-                      onClick={() => handleClickForModel()}
+                      onClick={() =>
+                        handleClickForModel("images/product-1.jpg")
+                      }
                     />
                   </div>
                 </div>
@@ -139,7 +157,9 @@ const ProductDetailsPages = () => {
                     <img src="images/product-1.jpg" alt="image" />
                     <BsArrowsFullscreen
                       className={`bg-black-25 p-3 text-5xl text-white rounded-sm transition-all duration-200 hover:bg-black-75 cursor-pointer absolute top-3 right-3`}
-                      onClick={() => handleClickForModel()}
+                      onClick={() =>
+                        handleClickForModel("images/product-1.jpg")
+                      }
                     />
                   </div>
                 </div>
@@ -200,8 +220,39 @@ const ProductDetailsPages = () => {
                 </div>
               </Slider>
             </div>
-            <div className={`w-[40.9868%] border`}>s</div>
+            <div className={`w-[41.5132%] border`}>
+              <div
+                className={`flex justify-start items-center gap-x-[10px] font-["montserrat"] text-yellow`}
+              >
+                <IoMdStar />
+                <IoMdStar />
+                <IoMdStar />
+                <IoMdStar />
+                <IoMdStar />
+                <span className={`font-normal text-xl text-black`}>
+                  ( 142 )
+                </span>
+              </div>
+              <h2
+                className={`font-["poppins"] font-semibold text-4xl leading-[46px]`}
+              >
+                NexSUS ROCK Strix Scar 17 Gaming Laptop 15.7” 1TB SSD 16GB RAM
+                Pro
+              </h2>
+            </div>
           </div>
+          {/* Modal */}
+          {isActiveModel && (
+            <div
+              className={`w-full h-screen bg-black-50 flex justify-center items-center fixed top-0 left-0 z-50 p-5 overflow-hidden border`}
+            >
+              <IoCloseSharp
+                onClick={() => setIsActiveModel(false)}
+                className={`absolute top-3 right-3 text-white text-3xl cursor-pointer`}
+              />
+              <img src={image} alt="image" className={`w-auto h-full`} />
+            </div>
+          )}
         </Container>
       </div>
     </>
