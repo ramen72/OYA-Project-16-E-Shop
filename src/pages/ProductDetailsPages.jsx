@@ -17,7 +17,7 @@ const ProductDetailsPages = () => {
   const [nav2, setNav2] = useState(null);
   const [isActiveModel, setIsActiveModel] = useState(false);
   const [image, setImage] = useState("");
-  const [productCount, setProductCount] = useState(1);
+  const [productQuantity, setProductQuantity] = useState(1);
   let sliderRef1 = useRef(null);
   let sliderRef2 = useRef(null);
 
@@ -46,9 +46,13 @@ const ProductDetailsPages = () => {
     setIsActiveModel(true);
     console.log("Clicked");
   };
-  const handelClickForProduct = () => {
-    if (productCount <= 1) return;
-    setProductCount(productCount - 1);
+  const handelClickForProduct = (type) => {
+    if (productQuantity < 1) return;
+    if (type === "minus") {
+      setProductQuantity(productQuantity - 1);
+    } else if (type === "plus") {
+      setProductQuantity(productQuantity + 1);
+    }
   };
 
   return (
@@ -387,7 +391,7 @@ const ProductDetailsPages = () => {
             <div className={`w-[41.5132%] flex justify-between items-center`}>
               <div className={`flex items-center gap-x-[80px]`}>
                 <button
-                  onClick={() => handelClickForProduct()}
+                  onClick={() => handelClickForProduct("minus")}
                   className={`w-14 h-14 text-base text-black cursor-pointer transition-all duration-200 hover:bg-lightGray rounded-full flex justify-center items-center`}
                 >
                   <FaMinus />
@@ -395,10 +399,10 @@ const ProductDetailsPages = () => {
                 <h5
                   className={`min-w-16 font-["poppins"] font-semibold text-4xl text-center text-black`}
                 >
-                  {productCount}
+                  {productQuantity}
                 </h5>
                 <button
-                  onClick={() => setProductCount(productCount + 1)}
+                  onClick={() => handelClickForProduct("plus")}
                   className={`w-14 h-14 text-base text-black cursor-pointer transition-all duration-200 hover:bg-lightGray rounded-full flex justify-center items-center`}
                 >
                   <FaPlus />
@@ -407,8 +411,10 @@ const ProductDetailsPages = () => {
               <div
                 className={`w-[253px] flex justify-end items-center gap-x-4`}
               >
-                <Button text="Buy Now" />
-                <Link to={"#"}>
+                <Link to={"/checkout"}>
+                  <Button text="Buy Now" />
+                </Link>
+                <Link to={"/cart"}>
                   <BsCart3
                     className={`w-[62px] h-[62px] p-3 text-2xl text-orange border border-orange rounded-[10px]`}
                   />
