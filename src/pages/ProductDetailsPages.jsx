@@ -18,6 +18,11 @@ const ProductDetailsPages = () => {
   const [isActiveModel, setIsActiveModel] = useState(false);
   const [image, setImage] = useState("");
   const [productQuantity, setProductQuantity] = useState(1);
+  const [isDescriptionShow, setIsDescriptionShow] = useState(false);
+  const [isSpecificationShow, setIsSpecificationShow] = useState(true);
+  const [isReturnShow, setIsReturnShow] = useState(false);
+  const [isReviewsShow, setIsReviewsShow] = useState(false);
+
   let sliderRef1 = useRef(null);
   let sliderRef2 = useRef(null);
 
@@ -46,12 +51,35 @@ const ProductDetailsPages = () => {
     setIsActiveModel(true);
     console.log("Clicked");
   };
-  const handelClickForProduct = (type) => {
+  const handleClickForProduct = (type) => {
     if (productQuantity < 1) return;
     if (type === "minus") {
       setProductQuantity(productQuantity - 1);
     } else if (type === "plus") {
       setProductQuantity(productQuantity + 1);
+    }
+  };
+  const handleClickForDescription = (details) => {
+    if (details === "Description") {
+      setIsDescriptionShow(true);
+      setIsSpecificationShow(false);
+      setIsReturnShow(false);
+      setIsReviewsShow(false);
+    } else if (details === "Specification") {
+      setIsDescriptionShow(false);
+      setIsSpecificationShow(true);
+      setIsReturnShow(false);
+      setIsReviewsShow(false);
+    } else if (details === "Return") {
+      setIsDescriptionShow(false);
+      setIsSpecificationShow(false);
+      setIsReturnShow(true);
+      setIsReviewsShow(false);
+    } else if (details === "Reviews") {
+      setIsDescriptionShow(false);
+      setIsSpecificationShow(false);
+      setIsReturnShow(false);
+      setIsReviewsShow(true);
     }
   };
 
@@ -391,7 +419,7 @@ const ProductDetailsPages = () => {
             <div className={`w-[41.5132%] flex justify-between items-center`}>
               <div className={`flex items-center gap-x-[80px]`}>
                 <button
-                  onClick={() => handelClickForProduct("minus")}
+                  onClick={() => handleClickForProduct("minus")}
                   className={`w-14 h-14 text-base text-black cursor-pointer transition-all duration-200 hover:bg-lightGray rounded-full flex justify-center items-center`}
                 >
                   <FaMinus />
@@ -402,7 +430,7 @@ const ProductDetailsPages = () => {
                   {productQuantity}
                 </h5>
                 <button
-                  onClick={() => handelClickForProduct("plus")}
+                  onClick={() => handleClickForProduct("plus")}
                   className={`w-14 h-14 text-base text-black cursor-pointer transition-all duration-200 hover:bg-lightGray rounded-full flex justify-center items-center`}
                 >
                   <FaPlus />
@@ -420,6 +448,68 @@ const ProductDetailsPages = () => {
                   />
                 </Link>
               </div>
+            </div>
+          </div>
+          <div className={`mt-[100px] pb-20 border`}>
+            <div className={`flex justify-start items-center gap-x-12`}>
+              <button
+                onClick={() => handleClickForDescription("Description")}
+                className={`font-["poppins"] font-semibold text-2xl leading-[30px] text-black-25 cursor-pointer ${
+                  isDescriptionShow &&
+                  `relative after:content=[""] after:w-full after:h-1 after:bg-orange after:absolute after:left-1/2 after:-translate-x-1/2 after:-bottom-2`
+                }`}
+              >
+                Description
+              </button>
+              <button
+                onClick={() => handleClickForDescription("Specification")}
+                className={`font-["poppins"] font-semibold text-2xl leading-[30px] text-black-25 cursor-pointer ${
+                  isSpecificationShow &&
+                  `relative after:content=[""] after:w-full after:h-1 after:bg-orange after:absolute after:left-1/2 after:-translate-x-1/2 after:-bottom-2`
+                }`}
+              >
+                Specification
+              </button>
+              <button
+                onClick={() => handleClickForDescription("Return")}
+                className={`font-["poppins"] font-semibold text-2xl leading-[30px] text-black-25 cursor-pointer ${
+                  isReturnShow &&
+                  `relative after:content=[""] after:w-full after:h-1 after:bg-orange after:absolute after:left-1/2 after:-translate-x-1/2 after:-bottom-2`
+                }`}
+              >
+                Return
+              </button>
+              <button
+                onClick={() => handleClickForDescription("Reviews")}
+                className={`font-["poppins"] font-semibold text-2xl leading-[30px] text-black-25 cursor-pointer ${
+                  isReviewsShow &&
+                  `relative after:content=[""] after:w-full after:h-1 after:bg-orange after:absolute after:left-1/2 after:-translate-x-1/2 after:-bottom-2`
+                }`}
+              >
+                Reviews
+              </button>
+            </div>
+            <div>
+              {isDescriptionShow && (
+                <div>
+                  <h4>Description Details</h4>
+                </div>
+              )}
+              {isSpecificationShow && (
+                <div>
+                  <h4>Specification Details</h4>
+                </div>
+              )}
+              {isReturnShow && (
+                <div>
+                  <h4>ReturnShow Details</h4>
+                </div>
+              )}
+              {isReviewsShow && (
+                <div>
+                  <h4>Reviews Details</h4>
+                </div>
+              )}
             </div>
           </div>
           {/* Modal */}
