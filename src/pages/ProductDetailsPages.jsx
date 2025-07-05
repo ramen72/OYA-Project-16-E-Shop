@@ -7,10 +7,11 @@ import { IoMdStar } from "react-icons/io";
 import HeadPhoneIcon from "../assets/icons/HeadPhoneIcon";
 import VerifiedIcon from "../assets/icons/VerifiedIcon";
 import DeliveryIcon from "../assets/icons/DeliveryIcon";
-import { FaMinus, FaPlus } from "react-icons/fa";
+import { FaMinus, FaPlus, FaStar } from "react-icons/fa";
 import Button from "../components/Button";
 import { Link } from "react-router-dom";
 import CartIcon from "../assets/icons/CartIcon";
+import { GrStar } from "react-icons/gr";
 
 const ProductDetailsPages = () => {
   const [nav1, setNav1] = useState(null);
@@ -45,7 +46,6 @@ const ProductDetailsPages = () => {
     slidesToShow: 6,
     slidesToScroll: 1,
   };
-
   const handleClickForModel = (url) => {
     setImage(url);
     setIsActiveModel(true);
@@ -450,11 +450,13 @@ const ProductDetailsPages = () => {
               </div>
             </div>
           </div>
-          <div className={`mt-[100px] pb-20 border`}>
+          <div className={`mt-[100px] pb-20`}>
             <div className={`flex justify-start items-center gap-x-12`}>
               <button
                 onClick={() => handleClickForDescription("Description")}
-                className={`font-["poppins"] font-semibold text-2xl leading-[30px] text-black-25 cursor-pointer ${
+                className={`font-["poppins"] font-semibold text-2xl leading-[30px] ${
+                  isDescriptionShow ? "text-black" : "text-black-25"
+                } cursor-pointer ${
                   isDescriptionShow &&
                   `relative after:content=[""] after:w-full after:h-1 after:bg-orange after:absolute after:left-1/2 after:-translate-x-1/2 after:-bottom-2`
                 }`}
@@ -463,7 +465,9 @@ const ProductDetailsPages = () => {
               </button>
               <button
                 onClick={() => handleClickForDescription("Specification")}
-                className={`font-["poppins"] font-semibold text-2xl leading-[30px] text-black-25 cursor-pointer ${
+                className={`font-["poppins"] font-semibold text-2xl leading-[30px] ${
+                  isSpecificationShow ? "text-black" : "text-black-25"
+                } cursor-pointer ${
                   isSpecificationShow &&
                   `relative after:content=[""] after:w-full after:h-1 after:bg-orange after:absolute after:left-1/2 after:-translate-x-1/2 after:-bottom-2`
                 }`}
@@ -472,7 +476,9 @@ const ProductDetailsPages = () => {
               </button>
               <button
                 onClick={() => handleClickForDescription("Return")}
-                className={`font-["poppins"] font-semibold text-2xl leading-[30px] text-black-25 cursor-pointer ${
+                className={`font-["poppins"] font-semibold text-2xl leading-[30px] ${
+                  isReturnShow ? "text-black" : "text-black-25"
+                } cursor-pointer ${
                   isReturnShow &&
                   `relative after:content=[""] after:w-full after:h-1 after:bg-orange after:absolute after:left-1/2 after:-translate-x-1/2 after:-bottom-2`
                 }`}
@@ -481,7 +487,9 @@ const ProductDetailsPages = () => {
               </button>
               <button
                 onClick={() => handleClickForDescription("Reviews")}
-                className={`font-["poppins"] font-semibold text-2xl leading-[30px] text-black-25 cursor-pointer ${
+                className={`font-["poppins"] font-semibold text-2xl leading-[30px] ${
+                  isReviewsShow ? "text-black" : "text-black-25"
+                } cursor-pointer ${
                   isReviewsShow &&
                   `relative after:content=[""] after:w-full after:h-1 after:bg-orange after:absolute after:left-1/2 after:-translate-x-1/2 after:-bottom-2`
                 }`}
@@ -489,25 +497,356 @@ const ProductDetailsPages = () => {
                 Reviews
               </button>
             </div>
-            <div>
+            <div className={`min-h-[430px] mt-[60px]`}>
               {isDescriptionShow && (
                 <div>
-                  <h4>Description Details</h4>
+                  <h4
+                    className={`font-bold text-3xl leading-[30px] text-black-75 capitalize mb-7 underline`}
+                  >
+                    description
+                  </h4>
+                  <p
+                    className={`font-["montserrat"] font-normal text-xl leading-[30px] text-black-75 text-justify`}
+                  >
+                    <b className={`block`}>
+                      NexSUS ROCK Strix Scar 17 Gaming Laptop 15.7” 1TB SSD 16GB
+                      RAM Pro
+                    </b>{" "}
+                    Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+                    Aspernatur cumque voluptate accusantium doloribus
+                    asperiores, rerum dolorem in aperiam suscipit perspiciatis
+                    nihil non rem quam iure consectetur quaerat nulla qui.
+                    Voluptates deleniti cumque quidem earum ea aperiam
+                    voluptatum in nisi facere quae delectus neque iusto
+                    voluptatem perspiciatis odit voluptatibus, repellendus
+                    reiciendis?
+                  </p>
                 </div>
               )}
               {isSpecificationShow && (
                 <div>
-                  <h4>Specification Details</h4>
+                  <h4
+                    className={`font-bold text-3xl leading-[30px] text-black-75 capitalize mb-7 underline`}
+                  >
+                    Specification Details
+                  </h4>
+                  <ul className="w-full flex flex-wrap justify-start items-start gap-y-4">
+                    <li className={`w-1/2 flex justify-start items-start`}>
+                      <h5
+                        className={`w-1/4 font-["poppins"] font-semibold text-xl leading-[30px] text-black`}
+                      >
+                        Brand
+                      </h5>
+                      <p
+                        className={`w-[65%] font-["montserrat"] font-normal text-xl leading-[30px] text-black-75`}
+                      >
+                        NexSUS Tech Company
+                      </p>
+                    </li>
+                    <li className={`w-1/2 flex justify-start items-start`}>
+                      <h5
+                        className={`w-1/4 font-["poppins"] font-semibold text-xl leading-[30px] text-black`}
+                      >
+                        Audio
+                      </h5>
+                      <p
+                        className={`w-[65%] font-["montserrat"] font-normal text-xl leading-[30px] text-black-75`}
+                      >
+                        2 x 4W speakers with Smart Amp technology
+                      </p>
+                    </li>
+                    <li className={`w-1/2 flex justify-start items-start`}>
+                      <h5
+                        className={`w-1/4 font-["poppins"] font-semibold text-xl leading-[30px] text-black`}
+                      >
+                        Display
+                      </h5>
+                      <p
+                        className={`w-[65%] font-["montserrat"] font-normal text-xl leading-[30px] text-black-75`}
+                      >
+                        17.3-inch Full HD (1920 x 1080) IPS panel, 144Hz refresh
+                        rate, 3ms response time, 100% sRGB color gamut,
+                        Adaptive-Sync technology, anti-glare
+                      </p>
+                    </li>
+                    <li className={`w-1/2 flex justify-start items-start`}>
+                      <h5
+                        className={`w-1/4 font-["poppins"] font-semibold text-xl leading-[30px] text-black`}
+                      >
+                        Connection
+                      </h5>
+                      <p
+                        className={`w-[65%] font-["montserrat"] font-normal text-xl leading-[30px] text-black-75`}
+                      >
+                        Wi-Fi 6 (802.11ax), Bluetooth 5.1, Gigabit Ethernet,
+                        HDMI 2.0b, USB 3.2 Gen 2 Type-C with DisplayPort 1.4 and
+                        Power Delivery, 3 x USB 3.2 Gen 1 Type-A, 3.5mm audio
+                      </p>
+                    </li>
+                    <li className={`w-1/2 flex justify-start items-start`}>
+                      <h5
+                        className={`w-1/4 font-["poppins"] font-semibold text-xl leading-[30px] text-black`}
+                      >
+                        Processor
+                      </h5>
+                      <p
+                        className={`w-[65%] font-["montserrat"] font-normal text-xl leading-[30px] text-black-75`}
+                      >
+                        10th Gen Intel Core i9-10980HK (8 cores, 16 threads,
+                        2.4GHz base clock speed, up to 5.3GHz turbo boost)
+                      </p>
+                    </li>
+                    <li className={`w-1/2 flex justify-start items-start`}>
+                      <h5
+                        className={`w-1/4 font-["poppins"] font-semibold text-xl leading-[30px] text-black`}
+                      >
+                        Keyboard
+                      </h5>
+                      <p
+                        className={`w-[65%] font-["montserrat"] font-normal text-xl leading-[30px] text-black-75`}
+                      >
+                        Backlit Chiclet keyboard, N-key rollover, per-key RGB
+                        lighting, Aura Sync technology
+                      </p>
+                    </li>
+                    <li className={`w-1/2 flex justify-start items-start`}>
+                      <h5
+                        className={`w-1/4 font-["poppins"] font-semibold text-xl leading-[30px] text-black`}
+                      >
+                        Graphics
+                      </h5>
+                      <p
+                        className={`w-[65%] font-["montserrat"] font-normal text-xl leading-[30px] text-black-75`}
+                      >
+                        NVIDIA GeForce RTX 3080 (16GB GDDR6 VRAM)
+                      </p>
+                    </li>
+                    <li className={`w-1/2 flex justify-start items-start`}>
+                      <h5
+                        className={`w-1/4 font-["poppins"] font-semibold text-xl leading-[30px] text-black`}
+                      >
+                        Battery
+                      </h5>
+                      <p
+                        className={`w-[65%] font-["montserrat"] font-normal text-xl leading-[30px] text-black-75`}
+                      >
+                        4-cell 90Wh lithium battery (up to 8 hours battery life)
+                      </p>
+                    </li>
+                    <li className={`w-1/2 flex justify-start items-start`}>
+                      <h5
+                        className={`w-1/4 font-["poppins"] font-semibold text-xl leading-[30px] text-black`}
+                      >
+                        Memory
+                      </h5>
+                      <p
+                        className={`w-[65%] font-["montserrat"] font-normal text-xl leading-[30px] text-black-75`}
+                      >
+                        32GB DDR4-3200 RAM
+                      </p>
+                    </li>
+                    <li className={`w-1/2 flex justify-start items-start`}>
+                      <h5
+                        className={`w-1/4 font-["poppins"] font-semibold text-xl leading-[30px] text-black`}
+                      >
+                        Dimensions
+                      </h5>
+                      <p
+                        className={`w-[65%] font-["montserrat"] font-normal text-xl leading-[30px] text-black-75`}
+                      >
+                        15.7 x 11.1 x 1.0 inches (W x D x H)
+                      </p>
+                    </li>
+                    <li className={`w-1/2 flex justify-start items-start`}>
+                      <h5
+                        className={`w-1/4 font-["poppins"] font-semibold text-xl leading-[30px] text-black`}
+                      >
+                        Storage
+                      </h5>
+                      <p
+                        className={`w-[65%] font-["montserrat"] font-normal text-xl leading-[30px] text-black-75`}
+                      >
+                        1TB PCIe NVMe M.2 SSD
+                      </p>
+                    </li>
+                    <li className={`w-1/2 flex justify-start items-start`}>
+                      <h5
+                        className={`w-1/4 font-["poppins"] font-semibold text-xl leading-[30px] text-black`}
+                      >
+                        Weight
+                      </h5>
+                      <p
+                        className={`w-[65%] font-["montserrat"] font-normal text-xl leading-[30px] text-black-75`}
+                      >
+                        6.28 pounds
+                      </p>
+                    </li>
+                  </ul>
                 </div>
               )}
               {isReturnShow && (
                 <div>
-                  <h4>ReturnShow Details</h4>
+                  <h4
+                    className={`font-bold text-3xl leading-[30px] text-black-75 capitalize mb-7 underline`}
+                  >
+                    Return Policy
+                  </h4>
+                  <p
+                    className={`font-["montserrat"] font-normal text-xl leading-[30px] text-black-75 text-justify`}
+                  >
+                    <b className={`block`}>
+                      NexSUS ROCK Strix Scar 17 Gaming Laptop 15.7” 1TB SSD 16GB
+                      RAM Pro
+                    </b>{" "}
+                    Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+                    Aspernatur cumque voluptate accusantium doloribus
+                    asperiores, rerum dolorem in aperiam suscipit perspiciatis
+                    nihil non rem quam iure consectetur quaerat nulla qui.
+                    Voluptates deleniti cumque quidem earum ea aperiam
+                    voluptatum in nisi facere quae delectus neque iusto
+                    voluptatem perspiciatis odit voluptatibus, repellendus
+                    reiciendis?
+                  </p>
                 </div>
               )}
               {isReviewsShow && (
                 <div>
-                  <h4>Reviews Details</h4>
+                  <h4
+                    className={`font-bold text-3xl leading-[30px] text-black-75 capitalize mb-7 underline`}
+                  >
+                    overall Reviews
+                  </h4>
+                  <div className={`flex justify-start items-center gap-x-20`}>
+                    <div className={``}>
+                      <h6
+                        className={`font-["montserrat"] font-bold text-3xl text-black-50`}
+                      >
+                        <span
+                          className={`font-["montserrat"] font-bold text-4xl text-black`}
+                        >
+                          3
+                        </span>
+                        /5
+                      </h6>
+                      <div
+                        className={`flex justify-start items-center gap-x-3 my-2`}
+                      >
+                        <FaStar className={`text-4xl text-yellow`} />
+                        <FaStar className={`text-4xl text-yellow`} />
+                        <FaStar className={`text-4xl text-yellow`} />
+                        <FaStar className={`text-4xl text-black-15`} />
+                        <FaStar className={`text-4xl text-black-15`} />
+                      </div>
+                      <span>105 Ratings</span>
+                    </div>
+                    <div>
+                      <div
+                        className={`flex justify-start items-center gap-x-3`}
+                      >
+                        <div
+                          className={`flex justify-start items-center gap-x-1`}
+                        >
+                          <FaStar className={`text-xl text-yellow`} />
+                          <FaStar className={`text-xl text-yellow`} />
+                          <FaStar className={`text-xl text-yellow`} />
+                          <FaStar className={`text-xl text-yellow`} />
+                          <FaStar className={`text-xl text-yellow`} />
+                        </div>
+                        <div className={`w-36 h-3 bg-black-10`}>
+                          <div className={`w-1/2 h-full bg-black-50`}></div>
+                        </div>
+                        <span
+                          className={`font-["montserrat"] font-normal text-xl text-black-75`}
+                        >
+                          (20)
+                        </span>
+                      </div>
+                      <div
+                        className={`flex justify-start items-center gap-x-3`}
+                      >
+                        <div
+                          className={`flex justify-start items-center gap-x-1`}
+                        >
+                          <FaStar className={`text-xl text-yellow`} />
+                          <FaStar className={`text-xl text-yellow`} />
+                          <FaStar className={`text-xl text-yellow`} />
+                          <FaStar className={`text-xl text-yellow`} />
+                          <FaStar className={`text-xl text-black-15`} />
+                        </div>
+                        <div className={`w-36 h-3 bg-black-10`}>
+                          <div className={`w-[45%] h-full bg-black-50`}></div>
+                        </div>
+                        <span
+                          className={`font-["montserrat"] font-normal text-xl text-black-75`}
+                        >
+                          (15)
+                        </span>
+                      </div>
+                      <div
+                        className={`flex justify-start items-center gap-x-3`}
+                      >
+                        <div
+                          className={`flex justify-start items-center gap-x-1`}
+                        >
+                          <FaStar className={`text-xl text-yellow`} />
+                          <FaStar className={`text-xl text-yellow`} />
+                          <FaStar className={`text-xl text-yellow`} />
+                          <FaStar className={`text-xl text-black-15`} />
+                          <FaStar className={`text-xl text-black-15`} />
+                        </div>
+                        <div className={`w-36 h-3 bg-black-10`}>
+                          <div className={`w-[68%] h-full bg-black-50`}></div>
+                        </div>
+                        <span
+                          className={`font-["montserrat"] font-normal text-xl text-black-75`}
+                        >
+                          (40)
+                        </span>
+                      </div>
+                      <div
+                        className={`flex justify-start items-center gap-x-3`}
+                      >
+                        <div
+                          className={`flex justify-start items-center gap-x-1`}
+                        >
+                          <FaStar className={`text-xl text-yellow`} />
+                          <FaStar className={`text-xl text-yellow`} />
+                          <FaStar className={`text-xl text-black-15`} />
+                          <FaStar className={`text-xl text-black-15`} />
+                          <FaStar className={`text-xl text-black-15`} />
+                        </div>
+                        <div className={`w-36 h-3 bg-black-10`}>
+                          <div className={`w-[40%] h-full bg-black-50`}></div>
+                        </div>
+                        <span
+                          className={`font-["montserrat"] font-normal text-xl text-black-75`}
+                        >
+                          (30)
+                        </span>
+                      </div>
+                      <div
+                        className={`flex justify-start items-center gap-x-3`}
+                      >
+                        <div
+                          className={`flex justify-start items-center gap-x-1`}
+                        >
+                          <FaStar className={`text-xl text-yellow`} />
+                          <FaStar className={`text-xl text-black-15`} />
+                          <FaStar className={`text-xl text-black-15`} />
+                          <FaStar className={`text-xl text-black-15`} />
+                          <FaStar className={`text-xl text-black-15`} />
+                        </div>
+                        <div className={`w-36 h-3 bg-black-10`}>
+                          <div className={`w-0 h-full bg-black-50`}></div>
+                        </div>
+                        <span
+                          className={`font-["montserrat"] font-normal text-xl text-black-75`}
+                        >
+                          (0)
+                        </span>
+                      </div>
+                    </div>
+                  </div>
                 </div>
               )}
             </div>
