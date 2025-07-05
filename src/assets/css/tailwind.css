@@ -52,6 +52,3 @@ input[type="range"]::-moz-range-thumb {
   cursor: pointer;
   -webkit-appearance: none;
 }
-.t {
-  color: #3030300d;
-}

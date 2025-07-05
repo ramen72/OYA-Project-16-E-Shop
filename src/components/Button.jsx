@@ -1,6 +1,7 @@
 import React from "react";
 
 const Button = ({
+  btnWidth,
   text = "Button Text",
   bg = "bg-[#FF624C]",
   font = "font-montserrat",
@@ -16,7 +17,7 @@ const Button = ({
 }) => {
   return (
     <button
-      className={`${bg} ${font} ${fontWeight} ${size} ${textColor} ${paddingY} ${paddingX} ${border} ${borderColor} ${radius} ${cursor}`}
+      className={`${btnWidth} ${bg} ${font} ${fontWeight} ${size} ${textColor} ${paddingY} ${paddingX} ${border} ${borderColor} ${radius} ${cursor}`}
     >
       {text}
     </button>
