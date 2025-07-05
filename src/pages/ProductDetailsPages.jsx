@@ -4,14 +4,13 @@ import Slider from "react-slick";
 import { BsArrowsFullscreen, BsCart3 } from "react-icons/bs";
 import { IoCloseSharp } from "react-icons/io5";
 import { IoMdStar } from "react-icons/io";
-import HeadPhoneIcon from "../assets/icons/HeadPhoneIcon";
 import VerifiedIcon from "../assets/icons/VerifiedIcon";
 import DeliveryIcon from "../assets/icons/DeliveryIcon";
 import { FaMinus, FaPlus, FaStar } from "react-icons/fa";
 import Button from "../components/Button";
 import { Link } from "react-router-dom";
-import CartIcon from "../assets/icons/CartIcon";
-import { GrStar } from "react-icons/gr";
+import ProductLayout from "../components/commonLayouts/ProductLayout";
+import { RelatedProductData } from "../data/RelatedProductData";
 
 const ProductDetailsPages = () => {
   const [nav1, setNav1] = useState(null);
@@ -450,7 +449,7 @@ const ProductDetailsPages = () => {
               </div>
             </div>
           </div>
-          <div className={`mt-[100px] pb-20`}>
+          <div className={`mt-[100px] pb-20 border-b border-black-25`}>
             <div className={`flex justify-start items-center gap-x-12`}>
               <button
                 onClick={() => handleClickForDescription("Description")}
@@ -850,6 +849,28 @@ const ProductDetailsPages = () => {
                 </div>
               )}
             </div>
+          </div>
+          {/* Related Products */}
+          <h3
+            className={`font-["poppins"]  font-semibold text-4xl leading-11 text-black mt-16 mb-12`}
+          >
+            Related Products
+          </h3>
+          <div className={`flex justify-start items-center`}>
+            {RelatedProductData.map((item, index) => (
+              <ProductLayout
+                key={index}
+                imageSrc={item.imageSrc}
+                categories={item.categories}
+                title={item.title}
+                rating={item.rating}
+                totalRating={item.totalRating}
+                price={item.price}
+                discount={item.discount}
+                discountPercentage={item.discountPercentage}
+                discountedPrice={item.discountedPrice}
+              />
+            ))}
           </div>
           {/* Modal */}
           {isActiveModel && (
