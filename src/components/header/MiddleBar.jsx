@@ -29,7 +29,7 @@ const MiddleBar = () => {
                 <SearchIcon />
               </div>
             </div>
-            <div className="w-[150px] relative pl-[50px] mr-16">
+            <Link to={"/cart"} className="w-[150px] relative pl-[50px] mr-16">
               <CartIcon width={35} height={35} color="#303030" />
               <div className=" text-black absolute top-1/2 -translate-y-1/2 left-24">
                 <p className='font-["Montserrat"] font-normal text-base capitalize leading-6'>
@@ -39,7 +39,7 @@ const MiddleBar = () => {
                   $150,000
                 </span>
               </div>
-            </div>
+            </Link>
             <div className='w-[170px] text-black  relative pl-[50px] after:content-[""] after:w-[1px] after:h-8 after:bg-black after:absolute after:left-0 after:top-1/2 after:-translate-y-1/2'>
               <UserIcon width={28} height={28} color="#303030" />
               <div className="absolute top-1/2 -translate-y-1/2 left-24">
