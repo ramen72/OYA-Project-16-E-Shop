@@ -5,6 +5,7 @@ import { Link } from "react-router-dom";
 import Button from "./../components/Button";
 import { FaRegTrashAlt } from "react-icons/fa";
 import { IoShareSocialOutline } from "react-icons/io5";
+import FacilityComponent from "../components/FacilityComponent";
 
 const CartPage = () => {
   const [cartData, setCartData] = useState(CartData);
@@ -31,7 +32,7 @@ const CartPage = () => {
   return (
     <>
       <Container>
-        <div className={`mt-16 mb-24`}>
+        <div className={`mt-16 mb-20`}>
           <div
             className={`flex justify-start items-center gap-x-8 font-["montserrat"] font-normal text-base text-black mb-12`}
           >
@@ -47,7 +48,7 @@ const CartPage = () => {
           >
             Your Cart
           </h1>
-          <div>
+          <div className={`pb-[100px] mb-20 border-b border-black-25`}>
             <div
               className={`bg-lightGray py-8 px-14 rounded-[15px] flex font-["montserrat"] font-bold text-base text-black`}
             >
@@ -199,6 +200,7 @@ const CartPage = () => {
               </Link>
             </div>
           </div>
+          <FacilityComponent />
         </div>
       </Container>
     </>
