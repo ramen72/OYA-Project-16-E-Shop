@@ -75,8 +75,12 @@ const CartPage = () => {
                   <div
                     className={`w-[49.4444%] pr-[90px] flex justify-between items-center gap-x-[62px]`}
                   >
-                    <div className={`w-[44.55%] h-[214px]`}>
-                      <img src={item.imageUrl} alt="" />
+                    <div className={`w-[44.55%] h-[214px] overflow-hidden`}>
+                      <img
+                        src={item.imageUrl}
+                        className={`object-center`}
+                        alt=""
+                      />
                     </div>
                     <div className={`w-[58.0056%]`}>
                       <p
@@ -171,7 +175,7 @@ const CartPage = () => {
                 >
                   SUB TOTAL
                 </h4>
-                <p
+                <div
                   className={`font-["poppins"] font-semibold text-2xl text-orange flex justify-end items-baseline`}
                 >
                   <span>$</span>
@@ -181,7 +185,7 @@ const CartPage = () => {
                   >
                     ( excl. shipping fee )
                   </p>
-                </p>
+                </div>
               </div>
             </div>
             <div className={`flex justify-end items-center gap-x-14 mt-8`}>
