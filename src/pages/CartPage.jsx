@@ -3,10 +3,13 @@ import Container from "../components/commonLayouts/Container";
 import CartData from "../data/CartData";
 import { Link } from "react-router-dom";
 import Button from "./../components/Button";
+import { FaRegTrashAlt } from "react-icons/fa";
+import { IoShareSocialOutline } from "react-icons/io5";
 
 const CartPage = () => {
   const [cartData, setCartData] = useState(CartData);
   const [totalAmount, setTotalAmount] = useState(5325);
+  const [isDellAndShareBtnShow, setIsDellAndShareBtnShow] = useState(null);
 
   const handleClickForQty = (index, type) => {
     const updatedCart = [...cartData];
@@ -65,7 +68,9 @@ const CartPage = () => {
               {cartData.map((item, index) => (
                 <li
                   key={index}
-                  className={`p-10 first:pt-8 rounded-[15px] flex items-center font-["montserrat"] font-bold text-base text-black border border-transparent hover:border-black-25`}
+                  onMouseEnter={() => setIsDellAndShareBtnShow(index)}
+                  onMouseLeave={() => setIsDellAndShareBtnShow(null)}
+                  className={`p-10 first:pt-8 rounded-[15px] flex items-center font-["montserrat"] font-bold text-base text-black border border-transparent transition-all duration-200 hover:border-black-25 relative`}
                 >
                   <div
                     className={`w-[49.4444%] pr-[90px] flex justify-between items-center gap-x-[62px]`}
@@ -123,6 +128,22 @@ const CartPage = () => {
                       {item.total}
                     </h3>
                   </div>
+                  {isDellAndShareBtnShow === index && (
+                    <div
+                      className={`absolute top-1/2 -translate-y-1/2 right-12`}
+                    >
+                      <button
+                        className={`w-16 h-16 rounded-full text-orange border border-orange transition-all duration-300 hover:bg-orange hover:text-white flex justify-center items-center cursor-pointer`}
+                      >
+                        <FaRegTrashAlt className={`text-3xl`} />
+                      </button>
+                      <button
+                        className={`w-16 h-16 rounded-full border text-orange border-orange transition-all duration-300 hover:bg-orange hover:text-white flex justify-center items-center  cursor-pointer mt-9`}
+                      >
+                        <IoShareSocialOutline className={`text-3xl`} />
+                      </button>
+                    </div>
+                  )}
                 </li>
               ))}
             </ul>
