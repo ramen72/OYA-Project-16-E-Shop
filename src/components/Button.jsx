@@ -16,11 +16,12 @@ const Button = ({
   borderColor = "border-transparent",
   radius = "rounded-[10px]",
   cursor = "cursor-pointer",
+  displayType = "inline-block",
 }) => {
   return (
     <Link
       to={href}
-      className={`${btnWidth} ${bg} ${font} ${fontWeight} ${size} ${textColor} ${paddingY} ${paddingX} ${border} ${borderColor} ${radius} ${cursor}`}
+      className={` ${displayType} text-center ${btnWidth} ${bg} ${font} ${fontWeight} ${size} ${textColor} ${paddingY} ${paddingX} ${border} ${borderColor} ${radius} ${cursor}`}
     >
       {text}
     </Link>
