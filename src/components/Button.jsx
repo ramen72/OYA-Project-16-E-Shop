@@ -21,7 +21,7 @@ const Button = ({
   return (
     <Link
       to={href}
-      className={` ${displayType} text-center ${btnWidth} ${bg} ${font} ${fontWeight} ${size} ${textColor} ${paddingY} ${paddingX} ${border} ${borderColor} ${radius} ${cursor}`}
+      className={` ${displayType} text-center capitalize ${btnWidth} ${bg} ${font} ${fontWeight} ${size} ${textColor} ${paddingY} ${paddingX} ${border} ${borderColor} ${radius} ${cursor}`}
     >
       {text}
     </Link>

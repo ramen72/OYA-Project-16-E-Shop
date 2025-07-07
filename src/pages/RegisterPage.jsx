@@ -75,7 +75,7 @@ const RegisterPage = () => {
                 border={false}
                 placeholderText="ameliawatson"
               />
-              <div className={`absolute top-[60px] right-6`}>
+              <div className={`absolute top-[60px] right-4`}>
                 <IoCheckmark className={`text-3xl text-orange`} />
               </div>
             </div>

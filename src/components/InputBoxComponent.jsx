@@ -52,7 +52,7 @@ const InputBoxComponent = ({
       ) : (
         <input
           type={inputType}
-          className={`w-full py-[25px] px-8 ${bg} ${
+          className={`w-full py-[25px] pl-8 pr-12 ${bg} ${
             border && "border border-solid border-black-25"
           } rounded-[10px] placeholder:font-["montserrat"] placeholder:font-normal placeholder:text-xl placeholder:text-black-75`}
           placeholder={placeholderText}
