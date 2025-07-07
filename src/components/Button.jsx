@@ -1,7 +1,9 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 const Button = ({
   btnWidth,
+  href = "#",
   text = "Button Text",
   bg = "bg-[#FF624C]",
   font = "font-montserrat",
@@ -16,11 +18,12 @@ const Button = ({
   cursor = "cursor-pointer",
 }) => {
   return (
-    <button
+    <Link
+      to={href}
       className={`${btnWidth} ${bg} ${font} ${fontWeight} ${size} ${textColor} ${paddingY} ${paddingX} ${border} ${borderColor} ${radius} ${cursor}`}
     >
       {text}
-    </button>
+    </Link>
   );
 };
 export default Button;

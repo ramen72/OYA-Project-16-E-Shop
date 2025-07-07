@@ -3,6 +3,7 @@ import CartIcon from "../../assets/icons/CartIcon";
 import UserIcon from "../../assets/icons/UserIcon";
 import { Link } from "react-router-dom";
 import SearchIcon from "../../assets/icons/SearchIcon";
+import Button from "../Button";
 
 const MiddleBar = () => {
   return (
@@ -40,7 +41,10 @@ const MiddleBar = () => {
                 </span>
               </div>
             </Link>
-            <div className='w-[170px] text-black  relative pl-[50px] after:content-[""] after:w-[1px] after:h-8 after:bg-black after:absolute after:left-0 after:top-1/2 after:-translate-y-1/2'>
+            <Link
+              to={"#"}
+              className='w-[170px] text-black  relative pl-[50px] after:content-[""] after:w-[1px] after:h-8 after:bg-black after:absolute after:left-0 after:top-1/2 after:-translate-y-1/2'
+            >
               <UserIcon width={28} height={28} color="#303030" />
               <div className="absolute top-1/2 -translate-y-1/2 left-24">
                 <p className='font-["Montserrat"] font-normal text-base capitalize leading-6'>
@@ -50,7 +54,10 @@ const MiddleBar = () => {
                   Account
                 </span>
               </div>
-            </div>
+              <div className={`absolute -top-4 -right-40`}>
+                <Button href="/login" text="login" />
+              </div>
+            </Link>
           </div>
         </div>
       </Container>

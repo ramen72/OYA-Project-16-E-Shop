@@ -12,6 +12,7 @@ import BlogsPage from "./pages/BlogsPage";
 import BlogDetailsPage from "./pages/BlogDetailsPage";
 import ContactPage from "./pages/ContactPage";
 import CommonLayout from "./components/commonLayouts/CommonLayout";
+import LoginPage from "./pages/LoginPage";
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
       <Routes>
         <Route path="/" element={<CommonLayout />}>
           <Route index element={<HomePage />} />
+          <Route path="/login" element={<LoginPage />} />
           <Route path="/product-list" element={<ProductListPages />} />
           <Route path="/product-details" element={<ProductDetailsPages />} />
           <Route path="/cart" element={<CartPage />} />
