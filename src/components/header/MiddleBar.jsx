@@ -54,10 +54,10 @@ const MiddleBar = () => {
                   Account
                 </span>
               </div>
-              <div className={`absolute -top-4 -right-40`}>
-                <Button href="/login" text="login" />
-              </div>
             </Link>
+            <div className={`absolute top-26 right-10`}>
+              <Button href="/login" text="login" />
+            </div>
           </div>
         </div>
       </Container>

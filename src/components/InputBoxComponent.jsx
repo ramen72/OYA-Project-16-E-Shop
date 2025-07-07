@@ -5,6 +5,8 @@ const InputBoxComponent = ({
   labelText = "Add Label Text",
   mandatory = false,
   inputType = "text",
+  bg = "bg-transparent",
+  border = true,
   placeholderText = "Add placeholder Text",
   isTextarea = false,
   textareaHeight = "h-[173px]",
@@ -50,7 +52,9 @@ const InputBoxComponent = ({
       ) : (
         <input
           type={inputType}
-          className={`w-full py-[25px] px-8 border border-solid border-black-25 rounded-[10px] placeholder:font-["montserrat"] placeholder:font-normal placeholder:text-xl placeholder:text-black-75`}
+          className={`w-full py-[25px] px-8 ${bg} ${
+            border && "border border-solid border-black-25"
+          } rounded-[10px] placeholder:font-["montserrat"] placeholder:font-normal placeholder:text-xl placeholder:text-black-75`}
           placeholder={placeholderText}
         />
       )}
