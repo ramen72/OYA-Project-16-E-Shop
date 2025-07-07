@@ -19,7 +19,7 @@ const InputBoxComponent = ({
         {labelText}
         {mandatory && (
           <sup>
-            <IoMdStar className={`text-red-600`} />
+            <IoMdStar className={`text-sm text-red-600`} />
           </sup>
         )}
       </label>
