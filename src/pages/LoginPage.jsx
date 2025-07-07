@@ -96,7 +96,7 @@ const LoginPage = () => {
               Have no an account?
             </p>
             <Link
-              to={"#"}
+              to={"/register"}
               className={`font-["montserrat"] font-bold text-base text-black capitalize`}
             >
               Register
