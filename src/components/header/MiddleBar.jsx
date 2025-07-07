@@ -42,7 +42,7 @@ const MiddleBar = () => {
               </div>
             </Link>
             <Link
-              to={"#"}
+              to={"/my-account"}
               className='w-[170px] text-black  relative pl-[50px] after:content-[""] after:w-[1px] after:h-8 after:bg-black after:absolute after:left-0 after:top-1/2 after:-translate-y-1/2'
             >
               <UserIcon width={28} height={28} color="#303030" />
