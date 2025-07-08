@@ -16,7 +16,11 @@ const BlogsPage = () => {
           <div
             className={`relative bg-lightGray w-full h-[600px] rounded-[15px] overflow-hidden`}
           >
-            <img src="#" alt="bgImage" />
+            <img
+              src="../../public/images/blogCoverPage.png"
+              alt="bgImage"
+              className={`w-full opacity-50`}
+            />
             <div className={`absolute left-[110px] top-1/2 -translate-y-1/2`}>
               <h1
                 className={`font-["poppins"] font-bold text-[56px] capitalize`}
