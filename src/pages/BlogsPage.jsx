@@ -13,7 +13,7 @@ const BlogsPage = () => {
             className={`relative bg-lightGray w-full h-[600px] rounded-[15px] overflow-hidden`}
           >
             <img
-              src="../../public/images/blogCoverPage.png"
+              src="images/blogCoverPage.png"
               alt="bgImage"
               className={`w-full opacity-50`}
             />
