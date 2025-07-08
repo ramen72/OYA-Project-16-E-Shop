@@ -1,6 +1,7 @@
 import React from "react";
 import UserIcon from "../assets/icons/UserIcon";
 import { HiMiniClock, HiUser } from "react-icons/hi2";
+import { Link } from "react-router-dom";
 
 const BlogPostComponent = ({
   width = "w-[512px]",
@@ -15,7 +16,8 @@ const BlogPostComponent = ({
 }) => {
   return (
     <>
-      <div
+      <Link
+        to={"/blog-details"}
         className={`${width} ${height} p-10 transition-all duration-100 border border-transparent hover:border-black-25 rounded-[25px]`}
       >
         <div
@@ -53,7 +55,7 @@ const BlogPostComponent = ({
             {date}
           </p>
         </div>
-      </div>
+      </Link>
     </>
   );
 };
