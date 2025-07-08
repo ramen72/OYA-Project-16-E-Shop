@@ -2,6 +2,7 @@ import React from "react";
 import { IoMdStar } from "react-icons/io";
 
 const InputBoxComponent = ({
+  isLabel = true,
   labelText = "Add Label Text",
   mandatory = false,
   inputType = "text",
@@ -12,19 +13,25 @@ const InputBoxComponent = ({
   textareaHeight = "h-[173px]",
   isDropdown = false,
   selectOptions,
+  paddingTop = "pt-[25px]",
+  paddingBottom = "pb-[25px]",
+  paddingLeft = "pl-8",
+  paddingRight = "pr-12",
 }) => {
   return (
     <>
-      <label
-        className={`flex justify-start items-center mb-3 font-["montserrat"] font-bold text-xl`}
-      >
-        {labelText}
-        {mandatory && (
-          <sup>
-            <IoMdStar className={`text-sm text-red-600`} />
-          </sup>
-        )}
-      </label>
+      {isLabel && (
+        <label
+          className={`flex justify-start items-center mb-3 font-["montserrat"] font-bold text-xl`}
+        >
+          {labelText}
+          {mandatory && (
+            <sup>
+              <IoMdStar className={`text-sm text-red-600`} />
+            </sup>
+          )}
+        </label>
+      )}
       {isTextarea ? (
         <textarea
           className={`w-full ${textareaHeight} py-[25px] px-8 border border-solid border-black-25 rounded-[10px]`}
@@ -36,8 +43,6 @@ const InputBoxComponent = ({
             {selectOptions.map((item, index) => (
               <option key={index}>{item}</option>
             ))}
-            {/* <option>BMW</option>
-            <option>Audi</option> */}
           </select>
           <div className="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-black">
             <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
@@ -52,7 +57,7 @@ const InputBoxComponent = ({
       ) : (
         <input
           type={inputType}
-          className={`w-full py-[25px] pl-8 pr-12 ${bg} ${
+          className={`w-full ${paddingTop} ${paddingBottom} ${paddingLeft} ${paddingRight} ${bg} ${
             border && "border border-solid border-black-25"
           } rounded-[10px] placeholder:font-["montserrat"] placeholder:font-normal placeholder:text-xl placeholder:text-black-75`}
           placeholder={placeholderText}
