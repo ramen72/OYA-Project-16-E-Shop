@@ -4,6 +4,9 @@ import InputBoxComponent from "../components/InputBoxComponent";
 import SearchIcon from "../assets/icons/SearchIcon";
 import RecentBlogPost from "../components/RecentBlogPost";
 import RecentBlogPostData from "../data/RecentBlogPostData";
+import BlogPostComponent from "../components/BlogPostComponent";
+import BlogPostData from "../data/BlogPostData";
+import Pagination from "../components/commonLayouts/Pagination";
 
 const BlogsPage = () => {
   return (
@@ -106,7 +109,29 @@ const BlogsPage = () => {
                 </div>
               </div>
             </div>
-            <div className={`w-[67.3684%] border`}>s</div>
+            <div className={`w-[67.5%]`}>
+              <div className={`flex flex-wrap justify-start items-center`}>
+                {BlogPostData.map((item, index) => (
+                  <BlogPostComponent
+                    key={index}
+                    width={"w-[512px]"}
+                    height={"h-[500px"}
+                    imageHref={item.imageHref}
+                    categoryTagText={item.categoryTagText}
+                    title={item.title}
+                    user={item.user}
+                    date={item.date}
+                  />
+                ))}
+              </div>
+            </div>
+            {/* <Pagination
+              totalItems={ProductsDataForPagination.length}
+              itemPerPage={itemPerPage}
+              currentPage={currentPage}
+              onPageChange={setCurrentPage}
+              position={true}
+            /> */}
           </div>
         </Container>
       </div>
