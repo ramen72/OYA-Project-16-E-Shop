@@ -7,6 +7,8 @@ import BlogDetailsData from "../data/BlogDetailsData";
 import ArrowLongLeftIcon from "../assets/icons/ArrowLongLeftIcon";
 import ArrowLongRightIcon from "../assets/icons/ArrowLongRightIcon";
 import { SlSocialInstagram } from "react-icons/sl";
+import CommentsComponent from "../components/CommentsComponent";
+import BlogsCommentsData from "../data/BlogsCommentsData";
 
 const BlogDetailsPage = () => {
   return (
@@ -204,6 +206,21 @@ const BlogDetailsPage = () => {
                   </span>
                   <ArrowLongRightIcon />
                 </div>
+              </div>
+              <h2
+                className={`font-["poppins"] font-semibold text-4xl text-black capitalize mt-20`}
+              >
+                Comments
+              </h2>
+              <div className={`mt-10 flex flex-col gap-y-12`}>
+                {BlogsCommentsData.map((item, index) => (
+                  <CommentsComponent
+                    key={index}
+                    title={item.title}
+                    duration={item.duration}
+                    details={item.details}
+                  />
+                ))}
               </div>
             </div>
           </div>
