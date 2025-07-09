@@ -11,6 +11,7 @@ import CommentsComponent from "../components/CommentsComponent";
 import BlogsCommentsData from "../data/BlogsCommentsData";
 import Button from "../components/Button";
 import InputBoxComponent from "../components/InputBoxComponent";
+import ArrowIcon from "../assets/icons/ArrowIcon";
 
 const BlogDetailsPage = () => {
   return (
@@ -272,6 +273,21 @@ const BlogDetailsPage = () => {
                   </div>
                   <Button text="Submit" />
                 </div>
+              </div>
+            </div>
+          </div>
+          <div className={`h-10 mt-[100px]`}>
+            <div className="flex justify-between items-center mb-12">
+              <div>
+                <h2 className='font-["Poppins"] font-semibold text-4xl leading-12 text-black capitalize'>
+                  Related Articles
+                </h2>
+              </div>
+              <div className="flex items-center gap-x-7 text-[#FF624C]">
+                <span className='font-["Montserrat"] font-bold text-base leading-6'>
+                  View All
+                </span>
+                <ArrowIcon />
               </div>
             </div>
           </div>
