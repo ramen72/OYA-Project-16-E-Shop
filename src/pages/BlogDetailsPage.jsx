@@ -9,6 +9,8 @@ import ArrowLongRightIcon from "../assets/icons/ArrowLongRightIcon";
 import { SlSocialInstagram } from "react-icons/sl";
 import CommentsComponent from "../components/CommentsComponent";
 import BlogsCommentsData from "../data/BlogsCommentsData";
+import Button from "../components/Button";
+import InputBoxComponent from "../components/InputBoxComponent";
 
 const BlogDetailsPage = () => {
   return (
@@ -221,6 +223,55 @@ const BlogDetailsPage = () => {
                     details={item.details}
                   />
                 ))}
+              </div>
+              <div className={`text-center mt-12`}>
+                <Button
+                  text="Load More Comments"
+                  bg="bg-none"
+                  textColor="text-orange"
+                  border="border"
+                  borderColor="border-orange"
+                />
+              </div>
+              <div
+                className={`bg-lightGray rounded-[25px] py-14 pl-20 pr-[70px] mt-[100px]`}
+              >
+                <h2
+                  className={`font-["poppins"] font-semibold text-4xl text-black capitalize`}
+                >
+                  Leave A Comment
+                </h2>
+                <p
+                  className={`font-["montserrat"] font-normal text-base leading-6 text-black capitalize mt-3`}
+                >
+                  Your email will not be shown on the comment section. Required
+                  fields are marked.*
+                </p>
+                <div className={`mt-10`}>
+                  <InputBoxComponent
+                    labelText="Your review"
+                    mandatory={true}
+                    placeholderText="Enter your review message ..."
+                    isTextarea={true}
+                    textareaHeight="h-[173px]"
+                  />
+                  <div className={`inline-block w-1/2 pr-[10px] mt-5 mb-10`}>
+                    <InputBoxComponent
+                      labelText="Name"
+                      mandatory={true}
+                      placeholderText="Amelia Robert"
+                    />
+                  </div>
+                  <div className={`inline-block w-1/2 pl-[10px] mt-5 mb-10`}>
+                    <InputBoxComponent
+                      labelText="Email"
+                      mandatory={true}
+                      inputType="email"
+                      placeholderText="amelia.watson@eshop.com"
+                    />
+                  </div>
+                  <Button text="Submit" />
+                </div>
               </div>
             </div>
           </div>
