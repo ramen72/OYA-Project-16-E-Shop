@@ -2,8 +2,11 @@ import React from "react";
 import Container from "../components/commonLayouts/Container";
 import BlogLeftSideBar from "../components/BlogLeftSideBar";
 import { HiMiniClock, HiUser } from "react-icons/hi2";
-import { FaComment } from "react-icons/fa";
+import { FaComment, FaFacebookF, FaTwitter } from "react-icons/fa";
 import BlogDetailsData from "../data/BlogDetailsData";
+import ArrowLongLeftIcon from "../assets/icons/ArrowLongLeftIcon";
+import ArrowLongRightIcon from "../assets/icons/ArrowLongRightIcon";
+import { SlSocialInstagram } from "react-icons/sl";
 
 const BlogDetailsPage = () => {
   return (
@@ -173,10 +176,34 @@ const BlogDetailsPage = () => {
                   Emerging Technologies
                 </span>
               </div>
-              <div className={`mt-20 flex justify-between items-center`}>
-                <div>Prev post</div>
-                <div>Social media</div>
-                <div>Next post</div>
+              <div
+                className={`mt-20 pb-[83px] flex justify-between items-center border-b border-black-25`}
+              >
+                <div
+                  className={`flex justify-start items-center gap-x-[19px] cursor-pointer`}
+                >
+                  <ArrowLongLeftIcon />
+                  <span
+                    className={`inline-block font-["poppins"] font-bold text-xl text-black leading-[30px] capitalize`}
+                  >
+                    Prev post
+                  </span>
+                </div>
+                <div className={`flex justify-center items-center gap-x-8`}>
+                  <FaFacebookF className={`text-[28px] text-black`} />
+                  <FaTwitter className={`text-[28px] text-black`} />
+                  <SlSocialInstagram className={`text-[28px] text-black`} />
+                </div>
+                <div
+                  className={`flex justify-end items-center gap-x-[19px] cursor-pointer`}
+                >
+                  <span
+                    className={`inline-block font-["poppins"] font-bold text-xl text-black leading-[30px] capitalize`}
+                  >
+                    Next post
+                  </span>
+                  <ArrowLongRightIcon />
+                </div>
               </div>
             </div>
           </div>
