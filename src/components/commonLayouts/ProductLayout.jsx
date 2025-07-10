@@ -56,7 +56,7 @@ const ProductLayout = ({
         )}
         <div className="flex justify-center items-center gap-x-4 absolute left-1/2 -translate-x-1/2 bottom-1 scale-0 transition-all duration-300 group-hover:scale-100">
           <Link
-            to={"/"}
+            to={"/cart"}
             className="w-[50px] h-[50px] transition-all duration-300 border border-orange bg-white text-orange hover:bg-orange rounded-full hover:text-white text-2xl flex justify-center items-center"
           >
             <IoCartOutline />

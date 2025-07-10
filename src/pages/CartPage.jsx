@@ -190,14 +190,16 @@ const CartPage = () => {
               </div>
             </div>
             <div className={`flex justify-end items-center gap-x-14 mt-8`}>
-              <h3
+              {/* <h3
                 className={`font-["poppins"] font-semibold text-xl text-black capitalize`}
               >
                 Continue Shopping
-              </h3>
-              <Link to={"/product-list"}>
+              </h3> */}
+              <Button href={"#"} text={"Continue Shopping"} />
+              <Button href={"/product-list"} text={"Update Cart"} />
+              {/* <Link to={"/product-list"}>
                 <Button text="Update Cart" />
-              </Link>
+              </Link> */}
             </div>
           </div>
           <FacilityComponent />

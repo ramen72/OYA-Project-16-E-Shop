@@ -438,9 +438,7 @@ const ProductDetailsPages = () => {
               <div
                 className={`w-[253px] flex justify-end items-center gap-x-4`}
               >
-                <Link to={"/checkout"}>
-                  <Button text="Buy Now" />
-                </Link>
+                <Button href={"/checkout"} text="Buy Now" />
                 <Link to={"/cart"}>
                   <BsCart3
                     className={`w-[62px] h-[62px] p-3 text-2xl text-orange border border-orange rounded-[10px]`}
