@@ -4,6 +4,7 @@ import InputBoxComponent from "../components/InputBoxComponent";
 import OrderData from "../data/OrderData";
 import Button from "../components/Button";
 import QuestionIcon from "../assets/icons/QuestionIcon";
+import FooterTop from "../components/footer/FooterTop";
 
 const CheckOutPage = () => {
   const [isActive, setIsActive] = useState("Information");
@@ -244,6 +245,9 @@ const CheckOutPage = () => {
               <h2>Payment will coming soon </h2>
             </div>
           )}
+          <div className={`mt-16`}>
+            <FooterTop />
+          </div>
         </div>
       </Container>
     </>

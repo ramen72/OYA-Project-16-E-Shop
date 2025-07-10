@@ -12,6 +12,8 @@ import { IoCheckmark } from "react-icons/io5";
 import IamNotRobotIcon from "../assets/icons/IamNotRobotIcon";
 import Button from "./../components/Button";
 import { Link } from "react-router-dom";
+import FooterTop from "../components/footer/FooterTop";
+import FooterBottom from "../components/footer/FooterBottom";
 
 const RegisterPage = () => {
   const [isSPassShow, setIsPasswordShow] = useState(false);
@@ -32,7 +34,7 @@ const RegisterPage = () => {
             Register
           </h1>
           <div
-            className={`w-[39.0789%] bg-lightGray rounded-3xl py-12 px-9 mx-auto`}
+            className={`w-[39.0789%] bg-lightGray rounded-3xl py-12 px-9 my-16 mx-auto`}
           >
             <InputBoxComponent
               labelText="Email Address"
@@ -174,6 +176,7 @@ const RegisterPage = () => {
               </div>
             </div>
           </div>
+          <FooterTop />
         </div>
       </Container>
     </>

@@ -5,6 +5,7 @@ import Button from "../components/Button";
 import { FaPhone } from "react-icons/fa";
 import { FaLocationDot, FaPhoneFlip } from "react-icons/fa6";
 import { IoIosMail } from "react-icons/io";
+import FooterTop from "../components/footer/FooterTop";
 
 const ContactPage = () => {
   return (
@@ -35,7 +36,7 @@ const ContactPage = () => {
             <span className={`font-bold`}>Checkout</span>
           </div>
           <div>
-            <div className={`flex justify-between mt-12`}>
+            <div className={`flex justify-between mt-12 mb-16`}>
               <div className={`w-[57.2368%]`}>
                 <h1
                   className={`font-["poppins"] font-semibold text-4xl text-black capitalize`}
@@ -144,6 +145,7 @@ const ContactPage = () => {
               </div>
             </div>
           </div>
+          <FooterTop />
         </Container>
       </div>
     </>

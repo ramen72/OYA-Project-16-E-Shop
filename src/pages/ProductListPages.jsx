@@ -9,6 +9,7 @@ import PriceRange from "../components/PriceRange";
 import { IoIosArrowDown } from "react-icons/io";
 import { MdGridView } from "react-icons/md";
 import { FaBars } from "react-icons/fa";
+import FooterTop from "../components/footer/FooterTop";
 
 const ProductListPages = () => {
   const [currentPage, setCurrentPage] = useState(1);
@@ -24,7 +25,7 @@ const ProductListPages = () => {
     <>
       <div className={`mt-16 mb-20`}>
         <Container>
-          <div className={`flex justify-between`}>
+          <div className={`flex justify-between mb-16`}>
             <div className={`w-[355px] relative`}>
               <div
                 className={`bg-lightGray justify-between rounded-[25px] p-12 sticky top-0`}
@@ -98,6 +99,7 @@ const ProductListPages = () => {
               />
             </div>
           </div>
+          <FooterTop />
         </Container>
       </div>
     </>

@@ -11,6 +11,7 @@ import Button from "../components/Button";
 import { Link } from "react-router-dom";
 import ProductLayout from "../components/commonLayouts/ProductLayout";
 import { RelatedProductData } from "../data/RelatedProductData";
+import FooterTop from "../components/footer/FooterTop";
 
 const ProductDetailsPages = () => {
   const [nav1, setNav1] = useState(null);
@@ -494,7 +495,7 @@ const ProductDetailsPages = () => {
                 Reviews
               </button>
             </div>
-            <div className={`min-h-[430px] mt-[60px]`}>
+            <div className={`mt-[60px]`}>
               {isDescriptionShow && (
                 <div>
                   <h4
@@ -854,7 +855,7 @@ const ProductDetailsPages = () => {
           >
             Related Products
           </h3>
-          <div className={`flex justify-start items-center`}>
+          <div className={`flex justify-start items-center mb-16`}>
             {RelatedProductData.map((item, index) => (
               <ProductLayout
                 key={index}
@@ -882,6 +883,7 @@ const ProductDetailsPages = () => {
               <img src={image} alt="image" className={`w-auto h-full`} />
             </div>
           )}
+          <FooterTop />
         </Container>
       </div>
     </>

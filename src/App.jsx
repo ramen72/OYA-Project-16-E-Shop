@@ -21,11 +21,11 @@ function App() {
         <Route path="/" element={<CommonLayout />}>
           <Route index element={<HomePage />} />
           <Route path="/login" element={<LoginPage />} />
+          <Route path="/register" element={<RegisterPage />} />
           <Route path="/product-list" element={<ProductListPages />} />
           <Route path="/product-details" element={<ProductDetailsPages />} />
           <Route path="/cart" element={<CartPage />} />
           <Route path="/checkout" element={<CheckOutPage />} />
-          <Route path="/register" element={<RegisterPage />} />
           <Route path="/my-account" element={<MyAccountsPage />} />
           <Route path="/blogs" element={<BlogsPage />} />
           <Route path="/blog-details" element={<BlogDetailsPage />} />

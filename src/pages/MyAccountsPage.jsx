@@ -10,6 +10,7 @@ import { IoLogOutOutline } from "react-icons/io5";
 import InputBoxComponent from "../components/InputBoxComponent";
 import { FaRegEye, FaRegEyeSlash } from "react-icons/fa";
 import Button from "../components/Button";
+import FooterTop from "../components/footer/FooterTop";
 
 const MyAccountsPage = () => {
   const [isSPassShow, setIsPasswordShow] = useState(false);
@@ -165,6 +166,9 @@ const MyAccountsPage = () => {
               </div>
               <Button text="Edit Profile" />
             </div>
+          </div>
+          <div className={`mt-16`}>
+            <FooterTop />
           </div>
         </Container>
       </div>

@@ -9,6 +9,7 @@ import Faq from "../components/faq/Faq";
 import TechTalk from "../components/TechTalk";
 import SpringSale from "../components/SpringSale";
 import Brands from "../components/Brands";
+import FooterTop from "../components/footer/FooterTop";
 
 const currencies = [
   {
@@ -68,6 +69,7 @@ const HomePage = () => {
       <Faq />
       <TechTalk />
       <Brands />
+      <FooterTop />
     </>
   );
 };
