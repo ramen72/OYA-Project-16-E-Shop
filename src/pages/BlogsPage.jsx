@@ -63,15 +63,17 @@ const BlogsPage = () => {
                   />
                 ))}
               </div>
+              <div className={`text-center mx-auto`}>
+                <Pagination
+                  totalItems={BlogPostData.length}
+                  itemPerPage={itemPerPage}
+                  currentPage={currentPage}
+                  onPageChange={setCurrentPage}
+                  position={true}
+                />
+              </div>
             </div>
           </div>
-          <Pagination
-            totalItems={BlogPostData.length}
-            itemPerPage={itemPerPage}
-            currentPage={currentPage}
-            onPageChange={setCurrentPage}
-            position={true}
-          />
         </Container>
       </div>
     </>
