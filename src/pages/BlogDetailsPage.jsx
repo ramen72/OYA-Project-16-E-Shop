@@ -14,6 +14,7 @@ import InputBoxComponent from "../components/InputBoxComponent";
 import ArrowIcon from "../assets/icons/ArrowIcon";
 import BlogRelatedArticlesComponent from "../components/BlogRelatedArticlesComponent";
 import Slider from "react-slick";
+import BlogRelatedArticlesData from "../data/BlogRelatedArticlesData";
 
 const BlogDetailsPage = () => {
   const settings = {
@@ -316,10 +317,18 @@ const BlogDetailsPage = () => {
                   <BlogRelatedArticlesComponent />
                 </div>
               </Slider> */}
-              <div className={`flex justify-between items-center`}>
-                <BlogRelatedArticlesComponent />
-                <BlogRelatedArticlesComponent />
-                <BlogRelatedArticlesComponent />
+              <div
+                className={`flex flex-wrap justify-between items-center gap-y-10`}
+              >
+                {BlogRelatedArticlesData.map((item, index) => (
+                  <BlogRelatedArticlesComponent
+                    key={index}
+                    imageUrl={item.imageUrl}
+                    title={item.title}
+                    buttonText={item.buttonTex}
+                    dateText={item.dateText}
+                  />
+                ))}
               </div>
             </div>
           </div>

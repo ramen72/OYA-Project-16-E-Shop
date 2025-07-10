@@ -10,6 +10,7 @@ const BlogRelatedArticlesComponent = ({
   paddingBottom = "pb-12",
   paddingLeft = "pl-[52px]",
   paddingRight = "pr-[52px]",
+  imageUrl,
   title = "Top 10 Best-Selling Products of the Month: Tablet Edition",
   buttonText = "Review",
   dateText = "dateText",
@@ -32,8 +33,8 @@ const BlogRelatedArticlesComponent = ({
           } transition-all duration-300`}
         >
           <img
-            src="../../public/images/blogImage-3.jpg"
-            alt=""
+            src={imageUrl}
+            alt="BlogImage"
             className={`w-full h-full object-cover rounded-[25px]`}
           />
         </div>
