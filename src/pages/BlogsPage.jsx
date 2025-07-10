@@ -1,10 +1,19 @@
-import React from "react";
+import React, { useState } from "react";
 import Container from "../components/commonLayouts/Container";
 import BlogPostComponent from "../components/BlogPostComponent";
 import BlogPostData from "../data/BlogPostData";
 import BlogLeftSideBar from "../components/BlogLeftSideBar";
+import Pagination from "../components/commonLayouts/Pagination";
 
 const BlogsPage = () => {
+  const [currentPage, setCurrentPage] = useState(1);
+  const itemPerPage = 10;
+
+  const startIndex = (currentPage - 1) * itemPerPage;
+  const currentBlogPostData = BlogPostData.slice(
+    startIndex,
+    startIndex + itemPerPage
+  );
   return (
     <>
       <div className={`mt-8 mb-10`}>
@@ -41,7 +50,7 @@ const BlogsPage = () => {
             </div>
             <div className={`w-[67.5%]`}>
               <div className={`flex flex-wrap justify-start items-center`}>
-                {BlogPostData.map((item, index) => (
+                {currentBlogPostData.map((item, index) => (
                   <BlogPostComponent
                     key={index}
                     width={"w-[512px]"}
@@ -55,14 +64,14 @@ const BlogsPage = () => {
                 ))}
               </div>
             </div>
-            {/* <Pagination
-              totalItems={ProductsDataForPagination.length}
-              itemPerPage={itemPerPage}
-              currentPage={currentPage}
-              onPageChange={setCurrentPage}
-              position={true}
-            /> */}
           </div>
+          <Pagination
+            totalItems={BlogPostData.length}
+            itemPerPage={itemPerPage}
+            currentPage={currentPage}
+            onPageChange={setCurrentPage}
+            position={true}
+          />
         </Container>
       </div>
     </>
