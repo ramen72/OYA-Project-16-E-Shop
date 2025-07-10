@@ -12,11 +12,21 @@ import BlogsCommentsData from "../data/BlogsCommentsData";
 import Button from "../components/Button";
 import InputBoxComponent from "../components/InputBoxComponent";
 import ArrowIcon from "../assets/icons/ArrowIcon";
+import BlogRelatedArticlesComponent from "../components/BlogRelatedArticlesComponent";
+import Slider from "react-slick";
 
 const BlogDetailsPage = () => {
+  const settings = {
+    dots: false,
+    infinite: true,
+    speed: 500,
+    slidesToShow: 3,
+    slidesToScroll: 1,
+  };
+
   return (
     <>
-      <div className={`mt-16 mb-[116px]`}>
+      <div className={`mt-16 mb-[110px]`}>
         <Container>
           <div
             className={`flex justify-start items-center gap-x-8 font-["montserrat"] font-normal text-base text-black mb-16`}
@@ -86,7 +96,10 @@ const BlogDetailsPage = () => {
               </p>
               <ul className={`flex flex-col gap-y-6`}>
                 {BlogDetailsData.map((item, index) => (
-                  <li className={`flex justify-start items-start gap-x-[30px]`}>
+                  <li
+                    key={index}
+                    className={`flex justify-start items-start gap-x-[30px]`}
+                  >
                     <div className={``}>
                       <span className='bg-orange w-[64px] h-[64px] font-["Montserrat"] font-semibold text-2xl text-white rounded-full text-center flex justify-center items-center'>
                         {index + 1}
@@ -276,18 +289,37 @@ const BlogDetailsPage = () => {
               </div>
             </div>
           </div>
-          <div className={`h-10 mt-[100px]`}>
+          <div className={`mt-[100px]`}>
             <div className="flex justify-between items-center mb-12">
-              <div>
-                <h2 className='font-["Poppins"] font-semibold text-4xl leading-12 text-black capitalize'>
-                  Related Articles
-                </h2>
-              </div>
+              <h2 className='font-["Poppins"] font-semibold text-4xl leading-12 text-black capitalize'>
+                Related Articles
+              </h2>
               <div className="flex items-center gap-x-7 text-[#FF624C]">
                 <span className='font-["Montserrat"] font-bold text-base leading-6'>
                   View All
                 </span>
                 <ArrowIcon />
+              </div>
+            </div>
+            <div className={``}>
+              {/* <Slider {...settings}>
+                <div>
+                  <BlogRelatedArticlesComponent />
+                </div>
+                <div>
+                  <BlogRelatedArticlesComponent />
+                </div>
+                <div>
+                  <BlogRelatedArticlesComponent />
+                </div>
+                <div>
+                  <BlogRelatedArticlesComponent />
+                </div>
+              </Slider> */}
+              <div className={`flex justify-between items-center`}>
+                <BlogRelatedArticlesComponent />
+                <BlogRelatedArticlesComponent />
+                <BlogRelatedArticlesComponent />
               </div>
             </div>
           </div>
