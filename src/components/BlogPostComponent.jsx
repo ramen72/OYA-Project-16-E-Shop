@@ -45,13 +45,13 @@ const BlogPostComponent = ({
           <p
             className={`flex justify-start items-center gap-x-3 fon-["montserrat"] font-normal text-sm text-black capitalize`}
           >
-            <HiUser className={`text-3xl`} />
+            <HiUser className={`text-3xl text-black-75`} />
             {user}
           </p>
           <p
             className={`flex justify-start items-center gap-x-3 fon-["montserrat"] font-normal text-sm text-black`}
           >
-            <HiMiniClock className={`text-3xl`} />
+            <HiMiniClock className={`text-3xl text-black-75`} />
             {date}
           </p>
         </div>

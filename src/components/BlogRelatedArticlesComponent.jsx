@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import Button from "./Button";
+import { HiMiniClock } from "react-icons/hi2";
 
 const BlogRelatedArticlesComponent = ({
   width = "w-[440px]",
@@ -47,8 +48,9 @@ const BlogRelatedArticlesComponent = ({
           <div className={`flex justify-between items-center`}>
             <Button text={buttonText} paddingY={"py-[7px]"} paddingX={"px-5"} />
             <p
-              className={`font-["montserrat"] font-normal text-sm text-black leading-[20px] capitalize`}
+              className={`font-["montserrat"] font-normal text-sm text-black leading-[20px] capitalize flex justify-end items-center gap-x-3`}
             >
+              <HiMiniClock className={`text-[22px] text-black-75`} />
               {dateText}
             </p>
           </div>
