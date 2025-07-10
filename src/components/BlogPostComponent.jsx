@@ -43,7 +43,7 @@ const BlogPostComponent = ({
         </h2>
         <div className={`flex justify-start items-center gap-x-8`}>
           <p
-            className={`flex justify-start items-center gap-x-3 fon-["montserrat"] font-normal text-sm text-black`}
+            className={`flex justify-start items-center gap-x-3 fon-["montserrat"] font-normal text-sm text-black capitalize`}
           >
             <HiUser className={`text-3xl`} />
             {user}
