@@ -80,7 +80,7 @@ const BlogDetailsPage = () => {
                 className={`w-full h-[645px] bg-lightGray rounded-[25px] my-12`}
               >
                 <img
-                  src="../../public/images/blogImage-3.jpg"
+                  src="images/blogImage-3.jpg"
                   alt="BlogImage"
                   className="w-full h-full rounded-[25px] object-cover"
                 />
