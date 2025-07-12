@@ -102,22 +102,24 @@ const FeaturedProduct = () => {
               <ArrowIcon />
             </div>
           </div>
-          <Slider {...settings} className="flex justify-center gap-1 my-7">
-            {FeaturedProductData.map((item, index) => (
-              <ProductLayout
-                key={index}
-                imageSrc={item.imageSrc}
-                categories={item.categories}
-                title={item.title}
-                rating={item.rating}
-                totalRating={item.totalRating}
-                price={item.price}
-                discount={item.discount}
-                discountPercentage={item.discountPercentage}
-                discountedPrice={item.discountedPrice}
-              />
-            ))}
-          </Slider>
+          <div className={`w-[1400px] mx-auto border`}>
+            <Slider {...settings} className="flex justify-center gap-1 my-7">
+              {FeaturedProductData.map((item, index) => (
+                <ProductLayout
+                  key={index}
+                  imageSrc={item.imageSrc}
+                  categories={item.categories}
+                  title={item.title}
+                  rating={item.rating}
+                  totalRating={item.totalRating}
+                  price={item.price}
+                  discount={item.discount}
+                  discountPercentage={item.discountPercentage}
+                  discountedPrice={item.discountedPrice}
+                />
+              ))}
+            </Slider>
+          </div>
         </Container>
       </div>
     </>
