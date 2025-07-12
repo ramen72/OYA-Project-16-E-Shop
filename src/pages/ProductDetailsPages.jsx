@@ -52,9 +52,10 @@ const ProductDetailsPages = () => {
     console.log("Clicked");
   };
   const handleClickForProduct = (type) => {
-    if (productQuantity < 1) return;
     if (type === "minus") {
-      setProductQuantity(productQuantity - 1);
+      if (productQuantity > 1) {
+        setProductQuantity(productQuantity - 1);
+      }
     } else if (type === "plus") {
       setProductQuantity(productQuantity + 1);
     }
