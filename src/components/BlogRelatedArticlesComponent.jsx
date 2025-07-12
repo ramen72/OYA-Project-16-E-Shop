@@ -20,7 +20,7 @@ const BlogRelatedArticlesComponent = ({
   return (
     <>
       <div
-        onMouseEnter={() => setIshover(true)}
+        onMouseEnter={() => setIshover(false)}
         onMouseLeave={() => setIshover(false)}
         className={`${width} ${height} ${borderWidth} ${
           ishover

@@ -302,34 +302,18 @@ const BlogDetailsPage = () => {
                 <ArrowIcon />
               </div>
             </div>
-            <div className={``}>
-              {/* <Slider {...settings}>
-                <div>
-                  <BlogRelatedArticlesComponent />
-                </div>
-                <div>
-                  <BlogRelatedArticlesComponent />
-                </div>
-                <div>
-                  <BlogRelatedArticlesComponent />
-                </div>
-                <div>
-                  <BlogRelatedArticlesComponent />
-                </div>
-              </Slider> */}
-              <div
-                className={`flex flex-wrap justify-between items-center gap-y-10`}
-              >
-                {BlogRelatedArticlesData.map((item, index) => (
-                  <BlogRelatedArticlesComponent
-                    key={index}
-                    imageUrl={item.imageUrl}
-                    title={item.title}
-                    buttonText={item.buttonTex}
-                    dateText={item.dateText}
-                  />
-                ))}
-              </div>
+            <div
+              className={`flex flex-wrap justify-between items-center gap-10`}
+            >
+              {BlogRelatedArticlesData.map((item, index) => (
+                <BlogRelatedArticlesComponent
+                  key={index}
+                  imageUrl={item.imageUrl}
+                  title={item.title}
+                  buttonText={item.buttonTex}
+                  dateText={item.dateText}
+                />
+              ))}
             </div>
           </div>
         </Container>
