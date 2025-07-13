@@ -1,13 +1,9 @@
 import React, { useState } from "react";
-import { FaFacebookF, FaLinkedinIn, FaRegHeart, FaStar } from "react-icons/fa";
-import { FaSquareInstagram } from "react-icons/fa6";
 import { GrStar } from "react-icons/gr";
-import {
-  IoCartOutline,
-  IoLogoTwitter,
-  IoShareSocialOutline,
-} from "react-icons/io5";
+import { IoCartOutline, IoShareSocialOutline } from "react-icons/io5";
 import { Link } from "react-router-dom";
+import ShareSocialMediaComponent from "../ShareSocialMediaComponent";
+import { FaRegHeart } from "react-icons/fa";
 
 const ProductLayout = ({
   bg = "bg-transparent",
@@ -79,35 +75,7 @@ const ProductLayout = ({
             className="w-[50px] h-[50px] transition-all duration-300 border border-orange bg-white text-orange hover:bg-orange rounded-full hover:text-white text-2xl flex justify-center items-center cursor-pointer"
           >
             <IoShareSocialOutline />
-            {isShareActive && (
-              <div
-                className={`bg-lightGray py-2 px-3 rounded-4xl shadow-2xl flex justify-center items-center gap-x-5 absolute -top-11 right-0`}
-              >
-                <Link to={"https://www.facebook.com"} target="_blank">
-                  <FaFacebookF
-                    className={`bg-white text-4xl p-[8px] hover:bg-orange hover:text-white rounded-full text-orange transition-all duration-300`}
-                  />
-                </Link>
-                <Link to={"https://x.com/i/flow/loginm"} target="_blank">
-                  <IoLogoTwitter
-                    className={`bg-white text-4xl p-[8px] hover:bg-orange hover:text-white rounded-full text-orange transition-all duration-300`}
-                  />
-                </Link>
-                <Link
-                  to={"https://www.instagram.com/accounts/login/?hl=en"}
-                  target="_blank"
-                >
-                  <FaSquareInstagram
-                    className={`bg-white text-4xl p-[8px] hover:bg-orange hover:text-white rounded-full text-orange transition-all duration-300`}
-                  />
-                </Link>
-                <Link to={"https://www.linkedin.com/login"} target="_blank">
-                  <FaLinkedinIn
-                    className={`bg-white text-4xl p-[8px] hover:bg-orange hover:text-white rounded-full text-orange transition-all duration-300`}
-                  />
-                </Link>
-              </div>
-            )}
+            {isShareActive && <ShareSocialMediaComponent />}
           </button>
         </div>
       </div>
