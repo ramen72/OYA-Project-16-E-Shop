@@ -30,7 +30,7 @@ function SamplePrevArrow(props) {
         justifyContent: "center",
         alignItems: "center",
         position: "absolute",
-        left: "calc(50% - 803px)",
+        left: "calc(50% - 760px)",
         zIndex: "99",
       }}
       onClick={onClick}
@@ -62,7 +62,7 @@ function SampleNextArrow(props) {
         justifyContent: "center",
         alignItems: "center",
         position: "absolute",
-        left: "calc(50% + 745px)",
+        left: "calc(50% + 720px)",
         zIndex: "99",
       }}
       onClick={onClick}
@@ -102,7 +102,7 @@ const FeaturedProduct = () => {
               <ArrowIcon />
             </div>
           </div>
-          <div className={`w-[1400px] mx-auto border`}>
+          <div className={`w-[1440px] mx-auto`}>
             <Slider {...settings} className="flex justify-center gap-1 my-7">
               {FeaturedProductData.map((item, index) => (
                 <ProductLayout
