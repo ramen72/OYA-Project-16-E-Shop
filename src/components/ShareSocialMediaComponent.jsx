@@ -8,7 +8,7 @@ const ShareSocialMediaComponent = () => {
   return (
     <>
       <div
-        className={`bg-lightGray py-2 px-3 rounded-4xl shadow-2xl flex justify-center items-center gap-x-5 absolute -top-11 right-0`}
+        className={`bg-lightGray-75 py-2 px-3 rounded-4xl shadow-2xl flex justify-center items-center gap-x-5 absolute -top-11 right-0`}
       >
         <Link to={"https://www.facebook.com"} target="_blank">
           <FaFacebookF
