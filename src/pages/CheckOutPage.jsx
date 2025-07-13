@@ -44,8 +44,7 @@ const CheckOutPage = () => {
                   01
                 </span>
               )}
-              <button
-                onClick={() => setIsActive("Information")}
+              <h3
                 className={`font-["poppins"] font-semibold text-2xl leading-[30px] ${
                   isActive === "Information" ? "text-black" : "text-black-25"
                 } cursor-pointer ${
@@ -54,18 +53,17 @@ const CheckOutPage = () => {
                 }`}
               >
                 Information
-              </button>
+              </h3>
             </div>
             <div className={`flex justify-start items-center gap-x-3`}>
               {isActive === "Shipping" && (
                 <span
                   className={`w-[50px] h-[50px] bg-orange rounded-full font-["montserrat"] font-bold text-base text-white flex justify-center items-center`}
                 >
-                  20
+                  02
                 </span>
               )}
-              <button
-                onClick={() => setIsActive("Shipping")}
+              <h3
                 className={`font-["poppins"] font-semibold text-2xl leading-[30px] ${
                   isActive === "Shipping" ? "text-black" : "text-black-25"
                 } cursor-pointer ${
@@ -74,18 +72,17 @@ const CheckOutPage = () => {
                 }`}
               >
                 Shipping
-              </button>
+              </h3>
             </div>
             <div className={`flex justify-start items-center gap-x-3`}>
               {isActive === "Payment" && (
                 <span
                   className={`w-[50px] h-[50px] bg-orange rounded-full font-["montserrat"] font-bold text-base text-white flex justify-center items-center`}
                 >
-                  24
+                  03
                 </span>
               )}
-              <button
-                onClick={() => setIsActive("Payment")}
+              <h3
                 className={`font-["poppins"] font-semibold text-2xl leading-[30px] ${
                   isActive === "Payment" ? "text-black" : "text-black-25"
                 } cursor-pointer ${
@@ -94,7 +91,7 @@ const CheckOutPage = () => {
                 }`}
               >
                 Payment
-              </button>
+              </h3>
             </div>
           </div>
           {isActive === "Information" && (
@@ -190,6 +187,11 @@ const CheckOutPage = () => {
                       placeholderText="Enter your order notes ..."
                     />
                   </div>
+                  <div className={`w-full text-right`}>
+                    <button onClick={() => setIsActive("Shipping")}>
+                      <Button text="Next" />
+                    </button>
+                  </div>
                 </div>
               </div>
               <div className={`w-[39.0789%]`}>
@@ -236,14 +238,31 @@ const CheckOutPage = () => {
             </div>
           )}
           {isActive === "Shipping" && (
-            <div className={`flex justify-between items-start`}>
-              <h2>Shipping will coming soon </h2>
+            <div>
+              <div className={`flex justify-between items-start`}>
+                <h2>Shipping will coming soon </h2>
+              </div>
+              <div className={`flex justify-between items-center mt-5`}>
+                <button onClick={() => setIsActive("Information")}>
+                  <Button text="Previous" />
+                </button>
+                <button onClick={() => setIsActive("Payment")}>
+                  <Button text="Next" />
+                </button>
+              </div>
             </div>
           )}
           {isActive === "Payment" && (
-            <div className={`flex justify-between items-start`}>
-              <h2>Payment will coming soon </h2>
-            </div>
+            <>
+              <div className={`flex justify-between items-start`}>
+                <h2>Payment will coming soon </h2>
+              </div>
+              <div className={`flex justify-between items-center mt-5`}>
+                <button onClick={() => setIsActive("Shipping")}>
+                  <Button text="Previous" />
+                </button>
+              </div>
+            </>
           )}
           <div className={`mt-16`}>
             <FooterTop />
