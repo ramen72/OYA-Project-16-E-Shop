@@ -1,7 +1,12 @@
 import React, { useState } from "react";
-import { FaRegHeart, FaStar } from "react-icons/fa";
+import { FaFacebookF, FaLinkedinIn, FaRegHeart, FaStar } from "react-icons/fa";
+import { FaSquareInstagram } from "react-icons/fa6";
 import { GrStar } from "react-icons/gr";
-import { IoCartOutline, IoShareSocialOutline } from "react-icons/io5";
+import {
+  IoCartOutline,
+  IoLogoTwitter,
+  IoShareSocialOutline,
+} from "react-icons/io5";
 import { Link } from "react-router-dom";
 
 const ProductLayout = ({
@@ -31,6 +36,7 @@ const ProductLayout = ({
   stockProgressColor = "bg-black",
   progressWidth = "w-6/10",
 }) => {
+  const [isShareActive, setIsShareActive] = useState(false);
   let [ratingValue, setRatingValue] = useState(new Array(rating).fill(rating));
 
   return (
@@ -67,12 +73,42 @@ const ProductLayout = ({
           >
             <FaRegHeart />
           </Link>
-          <Link
-            to={"/"}
-            className="w-[50px] h-[50px] transition-all duration-300 border border-orange bg-white text-orange hover:bg-orange rounded-full hover:text-white text-2xl flex justify-center items-center"
+          <button
+            onMouseEnter={() => setIsShareActive(true)}
+            onMouseLeave={() => setIsShareActive(false)}
+            className="w-[50px] h-[50px] transition-all duration-300 border border-orange bg-white text-orange hover:bg-orange rounded-full hover:text-white text-2xl flex justify-center items-center cursor-pointer"
           >
             <IoShareSocialOutline />
-          </Link>
+            {isShareActive && (
+              <div
+                className={`bg-lightGray py-2 px-3 rounded-4xl shadow-2xl flex justify-center items-center gap-x-5 absolute -top-11 right-0`}
+              >
+                <Link to={"https://www.facebook.com"} target="_blank">
+                  <FaFacebookF
+                    className={`bg-white text-4xl p-[8px] hover:bg-orange hover:text-white rounded-full text-orange transition-all duration-300`}
+                  />
+                </Link>
+                <Link to={"https://x.com/i/flow/loginm"} target="_blank">
+                  <IoLogoTwitter
+                    className={`bg-white text-4xl p-[8px] hover:bg-orange hover:text-white rounded-full text-orange transition-all duration-300`}
+                  />
+                </Link>
+                <Link
+                  to={"https://www.instagram.com/accounts/login/?hl=en"}
+                  target="_blank"
+                >
+                  <FaSquareInstagram
+                    className={`bg-white text-4xl p-[8px] hover:bg-orange hover:text-white rounded-full text-orange transition-all duration-300`}
+                  />
+                </Link>
+                <Link to={"https://www.linkedin.com/login"} target="_blank">
+                  <FaLinkedinIn
+                    className={`bg-white text-4xl p-[8px] hover:bg-orange hover:text-white rounded-full text-orange transition-all duration-300`}
+                  />
+                </Link>
+              </div>
+            )}
+          </button>
         </div>
       </div>
       <div>
