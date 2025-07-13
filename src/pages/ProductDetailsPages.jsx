@@ -418,7 +418,7 @@ const ProductDetailsPages = () => {
               </div>
             </div>
             <div className={`w-[41.5132%] flex justify-between items-center`}>
-              <div className={`flex items-center gap-x-[80px]`}>
+              <div className={`flex items-center gap-x-[60px]`}>
                 <button
                   onClick={() => handleClickForProduct("minus")}
                   className={`w-14 h-14 text-base text-black cursor-pointer transition-all duration-200 hover:bg-lightGray rounded-full flex justify-center items-center`}
