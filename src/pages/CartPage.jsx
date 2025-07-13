@@ -7,6 +7,7 @@ import { FaFacebookF, FaLinkedinIn, FaRegTrashAlt } from "react-icons/fa";
 import { IoLogoTwitter, IoShareSocialOutline } from "react-icons/io5";
 import FacilityComponent from "../components/FacilityComponent";
 import { FaSquareInstagram } from "react-icons/fa6";
+import ShareSocialMediaComponent from "../components/ShareSocialMediaComponent";
 
 const CartPage = () => {
   const [cartData, setCartData] = useState(CartData);
@@ -151,22 +152,13 @@ const CartPage = () => {
                       >
                         <IoShareSocialOutline className={`text-3xl`} />
                         {isShareActive && (
-                          <div
-                            className={`bg-lightGray py-3 px-4 rounded-4xl shadow-2xl flex justify-center items-center gap-x-5 absolute -top-11 right-0`}
-                          >
-                            <FaFacebookF
-                              className={`bg-white text-5xl p-[10px] hover:bg-orange hover:text-white rounded-full text-orange transition-all duration-300`}
-                            />
-                            <IoLogoTwitter
-                              className={`bg-white text-5xl p-[10px] hover:bg-orange hover:text-white rounded-full text-orange transition-all duration-300`}
-                            />
-                            <FaSquareInstagram
-                              className={`bg-white text-5xl p-[10px] hover:bg-orange hover:text-white rounded-full text-orange transition-all duration-300`}
-                            />
-                            <FaLinkedinIn
-                              className={`bg-white text-5xl p-[10px] hover:bg-orange hover:text-white rounded-full text-orange transition-all duration-300`}
-                            />
-                          </div>
+                          <ShareSocialMediaComponent
+                            bgColor="bg-lightGray"
+                            textSize="text-5xl"
+                            mainPaddingY="py-3"
+                            mainPaddingX="px-4"
+                            borderColor="border-black-25"
+                          />
                         )}
                       </button>
                     </div>
