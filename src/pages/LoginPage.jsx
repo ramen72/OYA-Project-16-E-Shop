@@ -13,7 +13,6 @@ import { IoCheckmark } from "react-icons/io5";
 import IamNotRobotIcon from "../assets/icons/IamNotRobotIcon";
 import FooterTop from "../components/footer/FooterTop";
 import Container from "../components/commonLayouts/Container";
-import FooterBottom from "../components/footer/FooterBottom";
 
 const LoginPage = () => {
   const [isSPassShow, setIsPasswordShow] = useState(false);
@@ -56,13 +55,13 @@ const LoginPage = () => {
               />
               <div className={`absolute top-[70px] right-5`}>
                 {isSPassShow ? (
-                  <FaRegEyeSlash
-                    onClick={() => handleShowPassword("show")}
+                  <FaRegEye
+                    onClick={() => setIsPasswordShow(!isSPassShow)}
                     className={`cursor-pointer`}
                   />
                 ) : (
-                  <FaRegEye
-                    onClick={() => setIsPasswordShow(!isSPassShow)}
+                  <FaRegEyeSlash
+                    onClick={() => handleShowPassword("show")}
                     className={`cursor-pointer`}
                   />
                 )}

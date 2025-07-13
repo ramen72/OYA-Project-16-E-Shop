@@ -18,24 +18,24 @@ const WishListPage = () => {
             >
               Home
             </span>
-            <span className={`font-bold`}>Cart</span>
+            <span className={`font-bold capitalize`}>wishlist</span>
           </div>
           <h1
             className={`font-["poppins"] font-bold text-[56px] leading-[68px] text-black capitalize mb-7`}
           >
-            Your Cart
+            Your wishlist
           </h1>
           <div className={``}>
             <div
               className={`bg-lightGray py-8 px-14 rounded-[15px] flex font-["montserrat"] font-bold text-base text-black`}
             >
-              <div className={`w-[67.3295%] uppercase`}>
+              <div className={`w-[63.3295%] uppercase`}>
                 <h3>PRODUCT</h3>
               </div>
               <div className={`w-[15.8381%] uppercase`}>
                 <h3>PRICE</h3>
               </div>
-              <div className={`w-[16.8324%] uppercase`}>
+              <div className={`w-[27.8324%] uppercase`}>
                 <h3>Stock Status</h3>
               </div>
             </div>

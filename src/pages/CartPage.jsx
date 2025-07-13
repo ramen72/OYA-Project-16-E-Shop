@@ -151,15 +151,19 @@ const CartPage = () => {
                         className={`w-16 h-16 rounded-full border text-orange border-orange transition-all duration-300 hover:bg-orange hover:text-white flex justify-center items-center cursor-pointer mt-9 relative`}
                       >
                         <IoShareSocialOutline className={`text-3xl`} />
-                        {isShareActive && (
-                          <ShareSocialMediaComponent
-                            bgColor="bg-lightGray"
-                            textSize="text-5xl"
-                            mainPaddingY="py-3"
-                            mainPaddingX="px-4"
-                            borderColor="border-black-25"
-                          />
-                        )}
+                        <div
+                          className={`absolute top-0 -translate-y-full right-0`}
+                        >
+                          {isShareActive && (
+                            <ShareSocialMediaComponent
+                              bgColor="bg-lightGray"
+                              textSize="text-5xl"
+                              mainPaddingY="py-3"
+                              mainPaddingX="px-3"
+                              borderColor="border-black-25"
+                            />
+                          )}
+                        </div>
                       </button>
                     </div>
                   )}

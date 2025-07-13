@@ -52,13 +52,13 @@ const RegisterPage = () => {
               />
               <div className={`absolute top-[70px] right-6`}>
                 {isSPassShow ? (
-                  <FaRegEyeSlash
-                    onClick={() => handleShowPassword("show")}
+                  <FaRegEye
+                    onClick={() => setIsPasswordShow(!isSPassShow)}
                     className={`cursor-pointer`}
                   />
                 ) : (
-                  <FaRegEye
-                    onClick={() => setIsPasswordShow(!isSPassShow)}
+                  <FaRegEyeSlash
+                    onClick={() => handleShowPassword("show")}
                     className={`cursor-pointer`}
                   />
                 )}
