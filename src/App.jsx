@@ -13,6 +13,7 @@ import BlogDetailsPage from "./pages/BlogDetailsPage";
 import ContactPage from "./pages/ContactPage";
 import CommonLayout from "./components/commonLayouts/CommonLayout";
 import LoginPage from "./pages/LoginPage";
+import WishListPage from "./pages/WishListPage";
 
 function App() {
   return (
@@ -25,6 +26,7 @@ function App() {
           <Route path="/product-list" element={<ProductListPages />} />
           <Route path="/product-details" element={<ProductDetailsPages />} />
           <Route path="/cart" element={<CartPage />} />
+          <Route path="/wish-list" element={<WishListPage />} />
           <Route path="/checkout" element={<CheckOutPage />} />
           <Route path="/my-account" element={<MyAccountsPage />} />
           <Route path="/blogs" element={<BlogsPage />} />

@@ -17,11 +17,16 @@ const Button = ({
   radius = "rounded-[10px]",
   cursor = "cursor-pointer",
   displayType = "inline-block",
+  isHover = false,
+  hoverTextColor = "text-white",
+  hoverBgColor = "bg-orange",
 }) => {
   return (
     <Link
       to={href}
-      className={` ${displayType} text-center capitalize ${btnWidth} ${bg} ${font} ${fontWeight} ${size} ${textColor} ${paddingY} ${paddingX} ${border} ${borderColor} ${radius} ${cursor}`}
+      className={` ${displayType} text-center capitalize ${btnWidth} ${bg} ${font} ${fontWeight} ${size} ${textColor} ${paddingY} ${paddingX} ${border} ${borderColor} ${radius} ${cursor} transition-all duration-300 ${
+        isHover ? `hover:${hoverBgColor} hover:${hoverTextColor}` : ""
+      }`}
     >
       {text}
     </Link>

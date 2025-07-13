@@ -62,7 +62,7 @@ const ProductLayout = ({
             <IoCartOutline />
           </Link>
           <Link
-            to={"/"}
+            to={"/wish-list"}
             className="w-[50px] h-[50px] transition-all duration-300 border border-orange bg-white text-orange hover:bg-orange rounded-full hover:text-white text-2xl flex justify-center items-center"
           >
             <FaRegHeart />
