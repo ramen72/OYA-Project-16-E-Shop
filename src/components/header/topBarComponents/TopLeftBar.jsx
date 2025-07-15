@@ -1,8 +1,13 @@
 import { Link } from "react-router-dom";
 import LocationIcon from "../../../assets/icons/LocationIcon";
 import PhoneIcon from "../../../assets/icons/PhoneIcon";
+import { useSelector, useDispatch } from "react-redux";
 
 const TopLeftBar = () => {
+  const isShowSideBar = useSelector((state) => state.handleShowSideBar.value);
+  const dispatch = useDispatch();
+  console.log(isShowSideBar);
+
   return (
     <>
       <div className="flex items-center gap-x-[50px] text-black">
