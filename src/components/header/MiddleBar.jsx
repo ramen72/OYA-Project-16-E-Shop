@@ -4,8 +4,13 @@ import UserIcon from "../../assets/icons/UserIcon";
 import { Link } from "react-router-dom";
 import SearchIcon from "../../assets/icons/SearchIcon";
 import Button from "../Button";
+import { useState } from "react";
 
 const MiddleBar = () => {
+  const [isShowSearch, setIsShowSearch] = useState(false);
+  let handleSearch = () => {
+    setIsShowSearch(!isShowSearch);
+  };
   return (
     <>
       <Container>
@@ -23,16 +28,24 @@ const MiddleBar = () => {
             <div className="relative">
               <input
                 type="text"
-                className={`w-[332px] border border-black-50 py-[18px] px-6 rounded-[10px] placeholder: font-["Montserrat"] text-sm placeholder:leading-[20px] placeholder:font-normal placeholder:text-black-75`}
+                className={`w-[330px] sm:w-[332px] mr-12 sm:mr-0 ml-1 sm-ml-0 border border-black-50 py-2 sm:py-[18px] sm:px-6 rounded-[10px] placeholder: font-["Montserrat"] text-sm placeholder:leading-[20px] placeholder:font-normal placeholder:text-black-75 ${
+                  isShowSearch && "hidden"
+                } px-3 sm:block`}
                 placeholder="Search Products ..."
               />
-              <div className={`absolute top-1/2 right-6 -translate-y-1/2`}>
+              <div
+                className={`absolute top-1/2 right-6 -translate-y-1/2 cursor-pointer`}
+                onClick={handleSearch}
+              >
                 <SearchIcon />
               </div>
             </div>
-            <Link to={"/cart"} className="w-[150px] relative pl-[50px] mr-16">
+            <Link
+              to={"/cart"}
+              className=" w-[50px] sm:w-[150px] relative sm:pl-[50px] mr-0 sm:mr-16"
+            >
               <CartIcon width={35} height={35} color="#303030" />
-              <div className=" text-black absolute top-1/2 -translate-y-1/2 left-24">
+              <div className=" text-black absolute top-1/2 -translate-y-1/2 left-24 hidden sm:block">
                 <p className='font-["Montserrat"] font-normal text-base capitalize leading-6'>
                   cart
                 </p>
@@ -43,10 +56,10 @@ const MiddleBar = () => {
             </Link>
             <Link
               to={"/my-account"}
-              className='w-[170px] text-black  relative pl-[50px] after:content-[""] after:w-[1px] after:h-8 after:bg-black after:absolute after:left-0 after:top-1/2 after:-translate-y-1/2'
+              className=' w-[30px]  sm:w-[170px] text-black  relative sm:pl-[50px] sm:after:content-[""] sm:after:w-[1px] sm:after:h-8 sm:after:bg-black sm:after:absolute sm:after:left-0 sm:after:top-1/2 sm:after:-translate-y-1/2'
             >
               <UserIcon width={28} height={28} color="#303030" />
-              <div className="absolute top-1/2 -translate-y-1/2 left-24">
+              <div className="absolute top-1/2 -translate-y-1/2 left-24 hidden sm:block">
                 <p className='font-["Montserrat"] font-normal text-base capitalize leading-6'>
                   User
                 </p>
@@ -55,7 +68,7 @@ const MiddleBar = () => {
                 </span>
               </div>
             </Link>
-            <div className={`absolute top-26 right-10`}>
+            <div className={`absolute top-26 right-10 hidden sm:block`}>
               <Button href="/login" text="login" />
             </div>
           </div>

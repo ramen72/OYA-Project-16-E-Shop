@@ -19,7 +19,7 @@ const TopRightBar = () => {
 
   return (
     <>
-      <div className="flex justify-end items-center gap-x-[49px]">
+      <div className="flex justify-between ms:justify-end items-center  sm:gap-x-[49px] mt-2 sm:mt-0">
         {/* Custom Dropdown for currency*/}
         <div>
           <select
@@ -39,7 +39,7 @@ const TopRightBar = () => {
             ))}
           </select>
         </div>
-        <div className='relative before:content-[""] before:absolute before:w-[1px] before:h-8 before:bg-[#BFBFBF] before:-left-6 before:top-1/2 before:-translate-1/2 after:content-[""] after:absolute after:w-[1px] after:h-8 after:bg-[#BFBFBF] after:-right-6 after:top-1/2 after:-translate-1/2'>
+        <div className='relative before:content-[""] before:absolute before:w-[1px] before:h-5 sm:before:h-8 before:bg-[#BFBFBF] before:-left-6 before:top-1/2 before:-translate-1/2 after:content-[""] after:absolute after:w-[1px] after:h-5 sm:after:h-8 after:bg-[#BFBFBF] after:-right-6 after:top-1/2 after:-translate-1/2'>
           <select
             name="country"
             className="text-right hidden"

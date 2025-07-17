@@ -9,7 +9,7 @@ const TopBar = () => {
     <>
       <div className="border-b border-black-25 border-solid py-[22px]">
         <Container>
-          <div className="flex justify-between items-center font-['Montserrat'] font-normal text-sm">
+          <div className="sm:flex sm:justify-between sm:items-center font-['Montserrat'] font-normal text-sm mx-1 sm:mx-0">
             <TopLeftBar />
             <TopRightBar />
           </div>
