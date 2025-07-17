@@ -5,16 +5,23 @@ import { Link } from "react-router-dom";
 import SearchIcon from "../../assets/icons/SearchIcon";
 import Button from "../Button";
 import { useState } from "react";
+import { FaBars } from "react-icons/fa";
+import { useDispatch } from "react-redux";
+import { showSideBar } from "../../redux/slices/sideBarSlice";
 
 const MiddleBar = () => {
+  const dispatch = useDispatch();
   const [isShowSearch, setIsShowSearch] = useState(false);
   let handleSearch = () => {
     setIsShowSearch(!isShowSearch);
   };
+  const handleShowSideBar = () => {
+    dispatch(showSideBar());
+  };
   return (
     <>
       <Container>
-        <div className="flex justify-between items-center py-6">
+        <div className="flex justify-between items-center py-3 sm:py-6 px-1 sm:px-0">
           <div>
             <Link to={"/"}>
               <img
@@ -26,10 +33,16 @@ const MiddleBar = () => {
           </div>
           <div className="flex justify-end items-center">
             <div className="relative">
+              <div
+                className={` sm:hidden absolute top-1/2 -left-24 -translate-y-1/2 cursor-pointer`}
+                onClick={handleShowSideBar}
+              >
+                <FaBars />
+              </div>
               <input
                 type="text"
                 className={`w-[330px] sm:w-[332px] mr-12 sm:mr-0 ml-1 sm-ml-0 border border-black-50 py-2 sm:py-[18px] sm:px-6 rounded-[10px] placeholder: font-["Montserrat"] text-sm placeholder:leading-[20px] placeholder:font-normal placeholder:text-black-75 ${
-                  isShowSearch && "hidden"
+                  !isShowSearch && "hidden"
                 } px-3 sm:block`}
                 placeholder="Search Products ..."
               />

@@ -1,7 +1,7 @@
 import { createSlice } from "@reduxjs/toolkit";
 
 export const ideBarSlice = createSlice({
-  name: "counter",
+  name: "ideBar",
   initialState: {
     value: false,
   },
