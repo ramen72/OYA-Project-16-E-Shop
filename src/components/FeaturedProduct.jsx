@@ -43,11 +43,6 @@ function SamplePrevArrow(props) {
 function SampleNextArrow(props) {
   const { className, style, onClick } = props;
   return (
-    // <div
-    //   className={className}
-    //   style={{ ...style, display: "block", background: "#30303040", color:"black", width: "40px", height:"40px", display: "flex", justifyContent:"center", alignItems:"center", borderRadius:"50%"}}
-    //   onClick={onClick}
-    // />
     <div
       className={className}
       style={{
@@ -83,13 +78,39 @@ const FeaturedProduct = () => {
     autoplaySpeed: 2000,
     nextArrow: <SampleNextArrow />,
     prevArrow: <SamplePrevArrow />,
+    responsive: [
+      {
+        breakpoint: 1024,
+        settings: {
+          slidesToShow: 3,
+          slidesToScroll: 3,
+          infinite: true,
+          dots: true,
+        },
+      },
+      {
+        breakpoint: 600,
+        settings: {
+          slidesToShow: 2,
+          slidesToScroll: 2,
+          initialSlide: 2,
+        },
+      },
+      {
+        breakpoint: 480,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1,
+        },
+      },
+    ],
   };
 
   return (
     <>
       <div className="mt-20">
         <Container>
-          <div className="flex justify-between items-center mb-12">
+          <div className="sm:flex sm:justify-between sm:items-center mb-12">
             <div>
               <h2 className='font-["Poppins"] font-semibold text-4xl leading-12 text-black capitalize'>
                 Featured Products
