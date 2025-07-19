@@ -81,22 +81,22 @@ const SpringSale = () => {
     <>
       <div className={`bg-[#F4F4F4] mt-20 py-16`}>
         <Container>
-          <div className="flex justify-start items-center gap-x-[127px] relative">
+          <div className="sm:flex sm:justify-start sm:items-center sm:gap-x-[127px] relative">
             <div
-              className={`w-[402px] flex flex-col justify-center gap-10 items-center`}
+              className={`w-auto sm:w-[402px] flex flex-col justify-center gap-10 items-center`}
             >
               <h2
-                className={`font-["Poppins"] font-bold text-[56px] text-black`}
+                className={`font-["Poppins"] font-bold text-[46px] text-black`}
               >
                 Spring Sale
               </h2>
               <div
-                className={`flex justify-center items-start gap-x-3 font-["Poppins"] font-semibold text-[36px] text-[#FF624C]`}
+                className={`flex justify-center items-start gap-x-3 font-["Poppins"] font-semibold text-2xl sm:text-[36px] text-[#FF624C]`}
               >
                 <p className="flex flex-col items-center">
                   {formatTime(timerLeft.days)}{" "}
                   <span
-                    className={`font-["Montserrat"] font-normal text-base text-black`}
+                    className={`font-["Montserrat"] font-normal text-xs sm:text-base text-black`}
                   >
                     Days
                   </span>
@@ -105,7 +105,7 @@ const SpringSale = () => {
                 <p className="flex flex-col items-center">
                   {formatTime(timerLeft.hours)}{" "}
                   <span
-                    className={`font-["Montserrat"] font-normal text-base text-black`}
+                    className={`font-["Montserrat"] font-normal text-xs sm:text-base text-black`}
                   >
                     Hours
                   </span>
@@ -114,7 +114,7 @@ const SpringSale = () => {
                 <p className="flex flex-col items-center">
                   {formatTime(timerLeft.minutes)}{" "}
                   <span
-                    className={`font-["Montserrat"] font-normal text-base text-black`}
+                    className={`font-["Montserrat"] font-normal text-xs sm:text-base text-black`}
                   >
                     Minutes
                   </span>
@@ -123,7 +123,7 @@ const SpringSale = () => {
                 <p className="flex flex-col items-center">
                   {formatTime(timerLeft.seconds)}{" "}
                   <span
-                    className={`font-["Montserrat"] font-normal text-base text-black`}
+                    className={`font-["Montserrat"] font-normal text-xs sm:text-base text-black`}
                   >
                     Seconds
                   </span>
@@ -133,7 +133,7 @@ const SpringSale = () => {
                 <Button text={"Shop Now"} />
               </div>
             </div>
-            <div className={`w-[950px]`}>
+            <div className={`w-auto sm:w-[950px]`}>
               <Slider {...settings} className="flex justify-center gap-1 my-7">
                 {SpringSaleData.map((item, index) => (
                   <ProductLayout
@@ -170,7 +170,7 @@ const SpringSale = () => {
             <img
               src="images/SpringDots.svg"
               alt="SpringDots"
-              className={`absolute left-10 bottom-0`}
+              className={`absolute left-10 bottom-0 hidden sm:block`}
             />
           </div>
         </Container>

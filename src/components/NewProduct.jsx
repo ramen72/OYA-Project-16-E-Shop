@@ -28,9 +28,9 @@ const NewProduct = () => {
     <>
       <div className="mt-20">
         <Container>
-          <div className="flex justify-between items-center mb-12">
+          <div className=" sm:flex justify-between items-center mb-12">
             <div>
-              <h2 className='font-["Poppins"] font-semibold text-4xl leading-[46px] text-black capitalize'>
+              <h2 className='font-["Poppins"] font-semibold text-3xl sm:text-4xl leading-[46px] text-black capitalize'>
                 new Products
               </h2>
             </div>
@@ -59,7 +59,7 @@ const NewProduct = () => {
               </div>
             </div>
           </div>
-          <div className="flex justify-start gap-6 my-7">
+          <div className="flex sm:flex-row flex-col justify-start gap-6 my-7 mx-2 sm:mx-0">
             {NewProductData.map((item, index) => (
               <ProductLayout
                 key={index}

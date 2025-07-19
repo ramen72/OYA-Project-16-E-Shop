@@ -37,7 +37,7 @@ const ProductLayout = ({
 
   return (
     <div
-      className={`${width} ${bg} ${border} ${borderColor}  ${padding} overflow-hidden rounded-lg transition-all duration-300 group hover:bg-white ${hoverBorderColor}`}
+      className={`w-full sm:${width} ${bg} ${border} ${borderColor}  ${padding} overflow-hidden rounded-lg transition-all duration-300 group hover:bg-white ${hoverBorderColor}`}
     >
       <div className="relative">
         <div className={`${imgWith} mx-auto`}>
