@@ -17,6 +17,8 @@ const InputBoxComponent = ({
   paddingBottom = "pb-[25px]",
   paddingLeft = "pl-8",
   paddingRight = "pr-12",
+  handleChangeFunction,
+  inputName = "text",
 }) => {
   return (
     <>
@@ -57,6 +59,8 @@ const InputBoxComponent = ({
       ) : (
         <input
           type={inputType}
+          onChange={handleChangeFunction}
+          name={inputName}
           className={`w-full ${paddingTop} ${paddingBottom} ${paddingLeft} ${paddingRight} ${bg} ${
             border && "border border-solid border-black-25"
           } rounded-[10px] placeholder:font-["montserrat"] placeholder:font-normal placeholder:text-xl placeholder:text-black-75`}

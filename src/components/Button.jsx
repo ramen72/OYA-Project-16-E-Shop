@@ -20,16 +20,31 @@ const Button = ({
   isHover = false,
   hoverTextColor = "text-white",
   hoverBgColor = "bg-orange",
+  isOnClickFunction = false,
+  onClickFunction,
 }) => {
   return (
-    <Link
-      to={href}
-      className={` ${displayType} text-center capitalize ${btnWidth} ${bg} ${font} ${fontWeight} ${size} ${textColor} ${paddingY} ${paddingX} ${border} ${borderColor} ${radius} ${cursor} transition-all duration-300 ${
-        isHover ? `hover:${hoverBgColor} hover:${hoverTextColor}` : ""
-      }`}
-    >
-      {text}
-    </Link>
+    <>
+      {isOnClickFunction ? (
+        <button
+          onClick={onClickFunction}
+          className={` ${displayType} text-center capitalize ${btnWidth} ${bg} ${font} ${fontWeight} ${size} ${textColor} ${paddingY} ${paddingX} ${border} ${borderColor} ${radius} ${cursor} transition-all duration-300 ${
+            isHover ? `hover:${hoverBgColor} hover:${hoverTextColor}` : ""
+          }`}
+        >
+          {text}
+        </button>
+      ) : (
+        <Link
+          to={href}
+          className={` ${displayType} text-center capitalize ${btnWidth} ${bg} ${font} ${fontWeight} ${size} ${textColor} ${paddingY} ${paddingX} ${border} ${borderColor} ${radius} ${cursor} transition-all duration-300 ${
+            isHover ? `hover:${hoverBgColor} hover:${hoverTextColor}` : ""
+          }`}
+        >
+          {text}
+        </Link>
+      )}
+    </>
   );
 };
 export default Button;

@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import Button from "../components/Button";
 import InputBoxComponent from "../components/InputBoxComponent";
 import {
@@ -16,11 +16,16 @@ import Container from "../components/commonLayouts/Container";
 
 const LoginPage = () => {
   const [isSPassShow, setIsPasswordShow] = useState(false);
+  const [formData, setFormData] = useState({ userID: "admin", password: 123 });
+  const navigate = useNavigate();
 
   const handleShowPassword = (type) => {
     if (type === "show") {
     }
     setIsPasswordShow(!isSPassShow);
+  };
+  const handleLoginClick = () => {
+    navigate("/home");
   };
   return (
     <>
@@ -90,7 +95,12 @@ const LoginPage = () => {
               <IamNotRobotIcon />
             </div>
             <div className={`mt-6`}>
-              <Button text="Login" displayType="block" />
+              <Button
+                text="Login"
+                displayType="block"
+                onClickFunction={handleLoginClick}
+                isOnClickFunction={true}
+              />
             </div>
             <div className={`flex justify-center items-center gap-x-2 mt-5`}>
               <p
@@ -106,7 +116,7 @@ const LoginPage = () => {
               </Link>
             </div>
           </div>
-          <FooterTop />
+          {/* <FooterTop /> */}
         </Container>
       </div>
     </>

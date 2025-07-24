@@ -1,7 +1,7 @@
 import Container from "../commonLayouts/Container";
 import CartIcon from "../../assets/icons/CartIcon";
 import UserIcon from "../../assets/icons/UserIcon";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import SearchIcon from "../../assets/icons/SearchIcon";
 import Button from "../Button";
 import { useState } from "react";
@@ -12,12 +12,14 @@ import { showSideBar } from "../../redux/slices/sideBarSlice";
 const MiddleBar = () => {
   const dispatch = useDispatch();
   const [isShowSearch, setIsShowSearch] = useState(false);
+  const location = useLocation();
   let handleSearch = () => {
     setIsShowSearch(!isShowSearch);
   };
   const handleShowSideBar = () => {
     dispatch(showSideBar());
   };
+  console.log(location.pathname);
   return (
     <>
       <Container>
@@ -81,9 +83,11 @@ const MiddleBar = () => {
                 </span>
               </div>
             </Link>
-            <div className={`absolute top-26 right-10 hidden sm:block`}>
-              <Button href="/login" text="login" />
-            </div>
+            {location.pathname === "/register" && (
+              <div className={`absolute top-26 right-10 hidden sm:block`}>
+                <Button href="/login" text="login" />
+              </div>
+            )}
           </div>
         </div>
       </Container>

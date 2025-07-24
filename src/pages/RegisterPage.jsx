@@ -147,7 +147,7 @@ const RegisterPage = () => {
                 Already have an account?
               </p>
               <Link
-                to={"/login"}
+                to={"/"}
                 className={`font-["montserrat"] font-bold text-base text-black capitalize`}
               >
                 Sing in
@@ -176,7 +176,7 @@ const RegisterPage = () => {
               </div>
             </div>
           </div>
-          <FooterTop />
+          {/* <FooterTop /> */}
         </div>
       </Container>
     </>

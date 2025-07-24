@@ -19,10 +19,10 @@ function App() {
   return (
     <>
       <Routes>
-        <Route path="/" element={<CommonLayout />}>
-          <Route index element={<HomePage />} />
-          <Route path="/login" element={<LoginPage />} />
-          <Route path="/register" element={<RegisterPage />} />
+        <Route index element={<LoginPage />} />
+        <Route path="/register" element={<RegisterPage />} />
+        <Route element={<CommonLayout />}>
+          <Route path="/home" element={<HomePage />} />
           <Route path="/product-list" element={<ProductListPages />} />
           <Route path="/product-details" element={<ProductDetailsPages />} />
           <Route path="/cart" element={<CartPage />} />
