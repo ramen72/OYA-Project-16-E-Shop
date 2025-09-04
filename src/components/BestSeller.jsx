@@ -10,7 +10,7 @@ const BestSeller = () => {
 
   return (
     <>
-      <div className="mt-20">
+      <div className="mt-20 px-2 sm:px-0">
         <Container>
           <div className="flex justify-between ">
             <div className="max-w-[902px]">
@@ -27,10 +27,11 @@ const BestSeller = () => {
                   <ArrowIcon />
                 </div>
               </div>
-              <div className="flex flex-wrap gap-6">
+              <div className="flex flex-wrap gap-5">
                 {BestSellerData.map((item, index) => (
                   <ProductLayout
                     key={index}
+                    // width={"w-[285px]"}
                     imageSrc={item.imageSrc}
                     categories={item.categories}
                     title={item.title}
