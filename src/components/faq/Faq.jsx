@@ -9,10 +9,10 @@ const Faq = () => {
 
   return (
     <>
-      <div className="mt-16 py-16 bg-[#F4F4F4]">
+      <div className="sm:mt-16 sm:py-16 py-8 px-2 sm:px-0 bg-[#F4F4F4]">
         <Container>
-          <div className="flex justify-between items-end relative">
-            <div className="w-[902px] ">
+          <div className="flex flex-col-reverse sm:flex-row justify-between sm:items-end relative">
+            <div className="sm:w-[902px] ">
               {AccordionData.map((item, index) => (
                 <AccordionItem
                   key={index}
@@ -25,24 +25,26 @@ const Faq = () => {
                 />
               ))}
             </div>
-            <div className="w-[544px] ">
+            <div className="sm:w-[544px] ">
               <img
                 src="images/faqDots.svg"
                 alt="Dots"
-                className="absolute top-0 right-0"
+                className="absolute top-0 right-0 hidden sm:block"
               />
               <h3
-                className={`max-w-[325px] font-["Poppins"] font-semibold text-[38px] leading-[46px] text-black mt-44`}
+                className={`max-w-[325px] font-["Poppins"] font-semibold text-2xl sm:text-textSize-38 leading-[46px] text-black sm:mt-44`}
               >
                 Frequently Asked Questions
               </h3>
               <p
-                className={`max-w-[395px] font-["Montserrat"] font-normal leading-[30px] text-xl text-black mt-6 mb-16`}
+                className={`max-w-[395px] font-["Montserrat"] font-normal leading-[30px] text-lg sm:text-xl text-black sm:mt-6 mb-6 sm:mb-16`}
               >
                 Questions that get asked the most by our clients. Get any
                 burning questions?
               </p>
-              <Button text={"Ask A Question"} />
+              <div className={`mb-6 sm:mb-0`}>
+                <Button text={"Ask A Question"} />
+              </div>
             </div>
           </div>
         </Container>

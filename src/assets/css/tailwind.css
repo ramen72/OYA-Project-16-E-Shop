@@ -23,6 +23,9 @@
 
   --font-montserrat: ` "Montserrat", "sans-serif" `;
   --font-poppins: ` "Poppins", "sans-serif" `;
+
+  --text-textSize-38: 38px;
+  --text-textSize-32: 32px;
 }
 
 .slick-prev:before {

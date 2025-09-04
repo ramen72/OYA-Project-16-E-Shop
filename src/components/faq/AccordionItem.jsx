@@ -5,22 +5,25 @@ const AccordionItem = ({ title, content, onToggle, isOpen }) => {
   return (
     <>
       {/* As per me */}
-      <div onClick={onToggle} className="bg-white mb-6 last:mb-0 rounded-3xl">
+      <div
+        onClick={onToggle}
+        className="bg-white mb-3 sm:mb-6 last:mb-0 rounded-3xl"
+      >
         <button
-          className={`w-full px-12 pt-8 ${
-            isOpen ? "pb-0" : "pb-8"
-          } font-["Poppins"] font-semibold leading-7 text-2xl text-left text-black cursor-pointer flex items-center gap-x-8 `}
+          className={`w-full px-4 sm:px-12 pt-2 sm:pt-8 ${
+            isOpen ? "pb-0" : "pb-2 sm:pb-8"
+          } font-["Poppins"] sm:font-semibold leading-7 text-m sm:text-2xl text-left text-black cursor-pointer flex items-center gap-x-2 sm:gap-x-8 `}
         >
           {isOpen ? (
             <IoIosArrowDown className="border border-orange text-orange p-2 text-[32px] rounded-full" />
           ) : (
-            <IoIosArrowForward className="bg-orange text-white p-2 text-[32px] rounded-full" />
+            <IoIosArrowForward className="bg-orange text-white p-2 text-textSize-32 rounded-full" />
           )}
           {title}
         </button>
         {isOpen && (
-          <div className="p-4 bg-white rounded-3xl ">
-            <p className='text-justify pl-[100px] pr-14 font-["Montserrat"] text-xl leading-[30px] text-black-75'>
+          <div className="bg-white rounded-3xl p-2 sm:p-4">
+            <p className='font-["Montserrat"] sm:text-xl text-justify leading-[30px] text-black-75 pl-11 sm:pl-[100px] pr-2 sm:pr-14 '>
               {content}
             </p>
           </div>
