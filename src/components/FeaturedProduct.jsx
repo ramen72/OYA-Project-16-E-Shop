@@ -91,9 +91,8 @@ const FeaturedProduct = () => {
       {
         breakpoint: 600,
         settings: {
-          slidesToShow: 2,
-          slidesToScroll: 2,
-          initialSlide: 2,
+          slidesToShow: 1,
+          slidesToScroll: 1,
         },
       },
       {
@@ -124,7 +123,7 @@ const FeaturedProduct = () => {
             </div>
           </div>
           <div className={`w-[1440px] mx-auto`}>
-            <Slider {...settings} className="flex justify-center gap-1 my-7">
+            <Slider {...settings} className="my-7">
               {FeaturedProductData.map((item, index) => (
                 <ProductLayout
                   key={index}
