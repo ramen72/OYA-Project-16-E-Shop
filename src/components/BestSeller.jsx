@@ -31,7 +31,7 @@ const BestSeller = () => {
                 {BestSellerData.map((item, index) => (
                   <ProductLayout
                     key={index}
-                    // width={"w-[285px]"}
+                    width={"w-[285px]"}
                     imageSrc={item.imageSrc}
                     categories={item.categories}
                     title={item.title}
